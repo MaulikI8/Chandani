@@ -968,3 +968,85 @@ body.login .submit-row input[type="submit"]:hover {
   border-bottom-color: #2c251e !important;
 }
 
+
+/* ── High-Contrast Changelist & Table Fix ── */
+#result_list {
+  background: #ffffff !important;
+}
+#result_list tbody tr {
+  background-color: #ffffff !important;
+}
+#result_list tbody tr:nth-child(even) {
+  background-color: #fbf9f5 !important;
+}
+#result_list thead th {
+  background: #1c1815 !important;
+  color: #c59b63 !important;
+  font-weight: 700 !important;
+}
+#result_list thead th a,
+#result_list thead th a:link,
+#result_list thead th a:visited {
+  color: #c59b63 !important;
+}
+#result_list tbody th,
+#result_list tbody th a,
+#result_list tbody th a:link,
+#result_list tbody th a:visited {
+  color: #141210 !important;
+  font-weight: 700 !important;
+}
+#result_list tbody th a:hover {
+  color: #c59b63 !important;
+  text-decoration: underline !important;
+}
+#result_list tbody td {
+  color: #2c251e !important;
+}
+#result_list tbody tr:hover td,
+#result_list tbody tr:hover th {
+  background-color: #f5efe6 !important;
+}
+
+/* Dark Mode explicit overrides */
+[data-theme="dark"] #result_list,
+html[data-theme="dark"] #result_list {
+  background: #181512 !important;
+}
+[data-theme="dark"] #result_list tbody tr,
+html[data-theme="dark"] #result_list tbody tr {
+  background-color: #1c1815 !important;
+}
+[data-theme="dark"] #result_list tbody tr:nth-child(even),
+html[data-theme="dark"] #result_list tbody tr:nth-child(even) {
+  background-color: #211c18 !important;
+}
+[data-theme="dark"] #result_list thead th,
+html[data-theme="dark"] #result_list thead th {
+  background: #12100e !important;
+  color: #d4af37 !important;
+  border-bottom: 2px solid #332b23 !important;
+}
+[data-theme="dark"] #result_list thead th a,
+html[data-theme="dark"] #result_list thead th a {
+  color: #d4af37 !important;
+}
+[data-theme="dark"] #result_list tbody th,
+[data-theme="dark"] #result_list tbody th a,
+[data-theme="dark"] #result_list tbody th a:link,
+[data-theme="dark"] #result_list tbody th a:visited,
+html[data-theme="dark"] #result_list tbody th a {
+  color: #f5f2ec !important;
+  font-weight: 700 !important;
+}
+[data-theme="dark"] #result_list tbody td,
+html[data-theme="dark"] #result_list tbody td {
+  color: #b8aea1 !important;
+  border-bottom: 1px solid #2c251e !important;
+}
+[data-theme="dark"] #result_list tbody tr:hover td,
+[data-theme="dark"] #result_list tbody tr:hover th,
+html[data-theme="dark"] #result_list tbody tr:hover td,
+html[data-theme="dark"] #result_list tbody tr:hover th {
+  background-color: #2c241d !important;
+}

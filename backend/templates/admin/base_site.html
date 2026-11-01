@@ -5,7 +5,7 @@
 
 {% block extrastyle %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'admin/css/chandani_luxury_admin.css' %}?v=2">
+<link rel="stylesheet" href="{% static 'admin/css/chandani_luxury_admin.css' %}?v=3">
 {% endblock %}
 
 {% block branding %}
@@ -24,6 +24,7 @@
 
 {% block nav-global %}
 <div style="display:flex;align-items:center;gap:10px;margin-right:20px;">
+  <a href="/admin" class="storefront-pill-btn" style="background: linear-gradient(135deg, #7952eb, #906bf5) !important; color: #fff !important; font-weight: 700;">✨ Modern Suite</a>
   <a href="/" target="_blank" rel="noopener noreferrer" class="storefront-pill-btn">
     Live Storefront
   </a>
