@@ -13,10 +13,27 @@ import { Toaster } from 'sonner';
 import { useMotionPreference } from './hooks/useMotionPreference';
 import './toast.css';
 
+// ── Store Merchant Admin Portal (Chandani Atelier) ──
+import { AdminProvider } from './state/AdminContext';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminProducts from './pages/admin/AdminProducts';
+import AdminCategories from './pages/admin/AdminCategories';
+import AdminEnquiries from './pages/admin/AdminEnquiries';
+import AdminCustomers from './pages/admin/AdminCustomers';
+import AdminCoupons from './pages/admin/AdminCoupons';
+import AdminAnalytics from './pages/admin/AdminAnalytics';
+import AdminRooms from './pages/admin/AdminRooms';
+import AdminCarpets from './pages/admin/AdminCarpets';
+import AdminContent from './pages/admin/AdminContent';
+import AdminTestimonials from './pages/admin/AdminTestimonials';
+
 function LegacyRedirect({ path }: { path: string }) {
   const location = useLocation();
   return <Navigate replace to={`${path}${location.search}${location.hash}`} />;
 }
+
 export function App() {
   const { panel, tryEntry, toastMessage, setPanel } = useApp();
   const reducedMotion = useMotionPreference();
@@ -25,9 +42,11 @@ export function App() {
   const lastScrollTarget = useRef('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
   useEffect(() => {
+    if (modalOpen || isAdminRoute) return;
     function handleKeyDown(event: KeyboardEvent) {
-      if (modalOpen) return;
       const target = event.target as HTMLElement | null;
       if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
       if (target?.isContentEditable) return;
@@ -42,18 +61,19 @@ export function App() {
     }
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [modalOpen, setPanel]);
+  }, [modalOpen, isAdminRoute, setPanel]);
 
   useEffect(() => {
+    if (isAdminRoute) return;
     function handleScroll() {
       setShowScrollTop(window.scrollY > 400);
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isAdminRoute]);
 
   useEffect(() => {
-    if (reducedMotion || modalOpen) return;
+    if (reducedMotion || modalOpen || isAdminRoute) return;
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -70,10 +90,12 @@ export function App() {
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };
-  }, [reducedMotion, modalOpen]);
+  }, [reducedMotion, modalOpen, isAdminRoute]);
 
   useEffect(() => {
-    if (location.pathname === '/carpet-studio') {
+    if (isAdminRoute) {
+      document.title = 'Chandani Atelier | Control Center';
+    } else if (location.pathname === '/carpet-studio') {
       document.title = 'Chandani · The carpet studio';
     } else if (location.pathname === '/atelier') {
       document.title = 'Chandani · The Atelier Story';
@@ -83,49 +105,98 @@ export function App() {
     } else {
       document.title = 'Chandani · Furniture, carpets & interiors';
     }
-  }, [location.pathname]);
+  }, [location.pathname, isAdminRoute]);
+
   useEffect(() => {
     const address = location.pathname + location.hash;
     const changed = lastScrollTarget.current !== address;
     lastScrollTarget.current = address;
     if (!location.hash || (!changed && !location.state?.scrollHash)) return;
     const target = document.getElementById(location.hash.slice(1));
-    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }));
+    if (target) {
+      requestAnimationFrame(() =>
+        target.scrollIntoView({
+          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+          block: 'start',
+        })
+      );
+    }
   }, [location.pathname, location.hash, location.key]);
-  useEffect(() => { if (!location.hash) window.scrollTo({ top: 0, behavior: 'instant' }); }, [location.pathname]);
-  return <><a className="skip" href="#main">Skip to content</a><Header /><main id="main" tabIndex={-1}>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/carpet-studio" element={<CarpetStudio />} />
-      <Route path="/product/:id" element={<ProductPage />} />
-      <Route path="/atelier" element={<AtelierPage />} />
-      <Route path="/index.html" element={<LegacyRedirect path="/" />} />
-      <Route path="/atelier.html" element={<LegacyRedirect path="/carpet-studio" />} />
-      <Route path="*" element={<section className="section"><h1>Let’s find your way home.</h1><SiteLink className="text-link" to="/">Explore Chandani →</SiteLink></section>} />
-    </Routes>
-  </main><Footer />
-    {panel && <Drawer />}
-    {tryEntry && <TryRoomDialog initial={tryEntry} />}
-    <Toaster
-      position="bottom-right"
-      toastOptions={{
-        className: 'chandani-toast',
-      }}
-      closeButton
-    />
-    <div className={`toast${toastMessage ? ' visible' : ''}`} role="status" aria-live="polite">{toastMessage}</div>
-    {showScrollTop && (
-      <button
-        type="button"
-        className="scroll-to-top-btn"
-        onClick={() => window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' })}
-        aria-label="Scroll to top of page"
-      >
-        ↑
-      </button>
-    )}
-  </>;
+
+  useEffect(() => {
+    if (!location.hash && !isAdminRoute) window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname, isAdminRoute]);
+
+  return (
+    <AdminProvider>
+      {!isAdminRoute && <a className="skip" href="#main">Skip to content</a>}
+      {!isAdminRoute && <Header />}
+
+      <main id="main" tabIndex={-1} style={isAdminRoute ? { padding: 0, margin: 0, minHeight: '100vh' } : undefined}>
+        <Routes>
+          {/* ══ Store Merchant Admin Portal ══ */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="categories" element={<AdminCategories />} />
+            <Route path="customers" element={<AdminCustomers />} />
+            <Route path="enquiries" element={<AdminEnquiries />} />
+            <Route path="orders" element={<AdminEnquiries />} />
+            <Route path="coupons" element={<AdminCoupons />} />
+            <Route path="analytics" element={<AdminAnalytics />} />
+            <Route path="finance" element={<AdminDashboard />} />
+            <Route path="rooms" element={<AdminRooms />} />
+            <Route path="carpets" element={<AdminCarpets />} />
+            <Route path="content" element={<AdminContent />} />
+            <Route path="testimonials" element={<AdminTestimonials />} />
+            <Route path="users" element={<AdminCustomers />} />
+          </Route>
+
+          {/* ══ Storefront Routes ══ */}
+          <Route path="/" element={<Home />} />
+          <Route path="/carpet-studio" element={<CarpetStudio />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/atelier" element={<AtelierPage />} />
+          <Route path="/index.html" element={<LegacyRedirect path="/" />} />
+          <Route path="/atelier.html" element={<LegacyRedirect path="/carpet-studio" />} />
+          <Route
+            path="*"
+            element={
+              <section className="section">
+                <h1>Let’s find your way home.</h1>
+                <SiteLink className="text-link" to="/">Explore Chandani →</SiteLink>
+              </section>
+            }
+          />
+        </Routes>
+      </main>
+
+      {!isAdminRoute && <Footer />}
+      {!isAdminRoute && panel && <Drawer />}
+      {!isAdminRoute && tryEntry && <TryRoomDialog initial={tryEntry} />}
+
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          className: 'chandani-toast',
+        }}
+        closeButton
+      />
+      <div className={`toast${toastMessage ? ' visible' : ''}`} role="status" aria-live="polite">
+        {toastMessage}
+      </div>
+
+      {showScrollTop && !isAdminRoute && (
+        <button
+          type="button"
+          className="scroll-to-top-btn"
+          onClick={() => window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' })}
+          aria-label="Scroll to top of page"
+        >
+          ↑
+        </button>
+      )}
+    </AdminProvider>
+  );
 }
-
-
-
