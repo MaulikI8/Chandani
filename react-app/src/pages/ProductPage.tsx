@@ -66,20 +66,20 @@ function BespokeProjectEstimator({ product, onEnquire }: { product: Product; onE
       timeline: '4-6 weeks handcrafted',
       scopeDesc: `Handcrafted ${product.name} in ${product.palette}. Sized for your primary space.`,
       deliverables: [
-        'Dedicated artisan workshop build & bench-made assembly',
-        'Pre-scheduled 2-person white-glove delivery to room of choice',
-        '10-year structural joinery & frame guarantee',
+        'Dedicated artisan workshop build and bench-made assembly in Patan',
+        'Pre-scheduled Kathmandu Valley room placement and unboxing',
+        '5-year structural joinery and frame warranty',
       ],
     },
     room: {
       title: 'Complete Room Curation',
       price: woodFinish === 'standard' ? 'रू 16,50,000 - रू 24,00,000' : 'रू 19,50,000 - रू 29,00,000',
       timeline: '6-8 weeks artisan curation',
-      scopeDesc: `${product.name} + 2 coordinating accent pieces and a hand-tufted New Zealand wool carpet.`,
+      scopeDesc: `${product.name} + 2 coordinating accent pieces and a hand-knotted Tibetan wool carpet.`,
       deliverables: [
-        'Complimentary in-home or virtual 3D room scale & lighting audit',
+        'Complimentary spatial scale and lighting audit',
         'Curated acoustic palette coordination with textile swatch kit',
-        'Consolidated white-glove delivery, room placement, and unboxing',
+        'Consolidated room placement and unboxing in Kathmandu Valley',
         'Priority workshop bench reservation with lead craftsman',
       ],
     },
@@ -169,7 +169,7 @@ function BespokeProjectEstimator({ product, onEnquire }: { product: Product; onE
         </div>
 
         <div className="estimator-deliverables">
-          <span className="deliverables-title">Included White-Glove Atelier Services:</span>
+          <span className="deliverables-title">Included Atelier Services:</span>
           <ul>
             {current.deliverables.map((item, i) => (
               <li key={i}>{item}</li>
@@ -199,7 +199,7 @@ function TradeConciergeCard({ onTrade, onSwatch }: { onTrade: () => void; onSwat
         </p>
         <div className="trade-highlights-grid">
           <div className="trade-highlight-item">
-            <strong>20% Trade Discount</strong>
+            <strong>Direct Trade Collaboration</strong>
             <span>Tiered commercial volume pricing on qualified studio projects.</span>
           </div>
           <div className="trade-highlight-item">
@@ -247,7 +247,7 @@ function AtelierProvenance() {
     },
     {
       num: '04',
-      title: 'White-Glove Placement',
+      title: 'Dedicated Room Placement',
       desc: 'Turnkey installation crew delivers into your room of choice, levels the piece, secures structural anchor points, and recycles all packaging.',
     },
   ];
@@ -271,38 +271,33 @@ function AtelierProvenance() {
   );
 }
 
-function ArchitecturalTestimonials() {
-  const quotes = [
+function ArchitecturalSpatialNotes() {
+  const notes = [
     {
-      quote: "Chandani crafts furniture with the permanence of architecture. The proportions of the Haven sofa bring a rare contemplative stillness to our Himalayan residential project.",
-      author: "Ar. Prashant Shrestha",
-      firm: "Studio Archaic · Jhamsikhel, Lalitpur",
-      project: "Patan Heritage Residence",
+      title: 'Circulation & Walkways',
+      rule: 'Maintain 90 cm clearance around primary seating perimeters for unhurried spatial flow.',
+      tip: 'In open-plan residences, use the carpet boundary to anchor the conversational zone without erecting visual barriers.',
     },
     {
-      quote: "The tactile depth of the hand-knotted New Zealand wool under shifting mountain daylight is peerless. It grounds the entire room without demanding attention.",
-      author: "Maya Sen-Gupta",
-      firm: "Kora Interior Architecture · Pokhara",
-      project: "Annapurna Mountain Retreat",
+      title: 'Daylight & Material Patina',
+      rule: 'Orient native Sisau and American Walnut where natural morning or indirect northern daylight reveals the wood grain.',
+      tip: 'Organic botanical oil finishes adapt gracefully to Himalayan relative humidity transitions.',
     },
   ];
 
   return (
-    <div className="atelier-testimonials-section" aria-label="Architectural reviews">
+    <div className="atelier-spatial-notes-section" aria-label="Architectural spatial guidance">
       <div className="section-head-mini">
-        <span className="eyebrow">ARCHITECTURAL VOICES</span>
-        <h4>Collector &amp; Designer Perspectives</h4>
+        <span className="eyebrow">ARCHITECTURAL GUIDANCE</span>
+        <h4>Spatial Principles &amp; Placement</h4>
       </div>
-      <div className="testimonials-grid">
-        {quotes.map((q, idx) => (
-          <blockquote key={idx} className="testimonial-card">
-            <p className="testimonial-quote">“{q.quote}”</p>
-            <footer className="testimonial-meta">
-              <strong>{q.author}</strong>
-              <span>{q.firm}</span>
-              <small>{q.project}</small>
-            </footer>
-          </blockquote>
+      <div className="spatial-notes-grid">
+        {notes.map((n, idx) => (
+          <div key={idx} className="spatial-note-card">
+            <h5>{n.title}</h5>
+            <p className="spatial-rule"><strong>Guideline:</strong> {n.rule}</p>
+            <p className="spatial-tip">{n.tip}</p>
+          </div>
         ))}
       </div>
     </div>
@@ -598,7 +593,7 @@ export function ProductPage() {
 
         <AtelierProvenance />
 
-        <ArchitecturalTestimonials />
+        <ArchitecturalSpatialNotes />
 
         <KathmanduShowroomCard
           onBookVisit={() => openEnquiry('Baber Mahal Showroom Viewing', 'private', 'Requesting a private gallery viewing appointment at Baber Mahal Revisited.')}

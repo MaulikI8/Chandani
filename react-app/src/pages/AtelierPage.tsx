@@ -86,7 +86,7 @@ export function AtelierPage() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">HOW WE WORK</span>
-            <h2>From space study<br />to white-glove placement.</h2>
+            <h2>From space study<br />to dedicated room placement.</h2>
           </div>
           <p>
             Whether commissioning a single statement dining table or an entire architectural residence suite, our collaborative process ensures complete clarity.
@@ -117,7 +117,7 @@ export function AtelierPage() {
           </div>
           <div className="process-step">
             <div className="step-badge">Phase 04</div>
-            <h4>White-Glove Turnkey Delivery</h4>
+            <h4>Dedicated Room Placement</h4>
             <p>
               Our specialist two-person logistics crew delivers directly into your room of choice, levels the piece, secures structural anchor points, and takes away all protective packaging for recycling.
             </p>

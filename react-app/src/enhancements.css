@@ -1774,48 +1774,48 @@ html.lenis, html.lenis body {
   margin: 0;
 }
 
-/* Architectural Reviews / Testimonials */
-.atelier-testimonials-section {
+/* Architectural Guidance / Spatial Notes */
+.atelier-spatial-notes-section {
   margin-top: 48px;
   padding-top: 40px;
-  border-top: 1px solid rgba(32, 26, 22, 0.1);
+  border-top: 1px solid var(--line);
 }
 
-.testimonials-grid {
+.spatial-notes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
-.testimonial-card {
+.spatial-note-card {
   margin: 0;
-  background: #ffffff;
-  border: 1px solid rgba(32, 26, 22, 0.08);
-  border-left: 3px solid var(--ink);
-  border-radius: 4px;
+  background: var(--white, #fffdf8);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--rust);
+  border-radius: 6px;
   padding: 24px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-.testimonial-quote {
-  font-style: italic;
+.spatial-note-card h5 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-family: var(--serif, Georgia, serif);
+  color: var(--ink);
+}
+
+.spatial-rule {
   font-size: 13px;
   line-height: 1.6;
   color: var(--ink);
-  margin: 0 0 16px 0;
+  margin: 0 0 10px 0;
 }
 
-.testimonial-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 11px;
-  color: rgba(32, 26, 22, 0.7);
-}
-
-.testimonial-meta strong {
-  color: var(--ink);
+.spatial-tip {
   font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* Showroom Visit Card */
@@ -3595,3 +3595,89 @@ html.lenis, html.lenis body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   THE LIVING GALLERY: 2026 LUXURY DIGITAL SHOWROOM ELEVATIONS
+   Architecture × Furniture × Materials × Technology × Emotion
+   ========================================================================== */
+
+/* 1. Materials Explorer 2700K Evening Warmth */
+.explorer-grid.lighting-evening .tray-tile {
+  filter: sepia(0.28) saturate(1.22) brightness(0.93);
+  box-shadow: inset 0 0 32px rgba(180, 83, 42, 0.38);
+}
+.explorer-grid.lighting-evening .materials-tray-card {
+  background: #fdfaf3;
+  border-color: rgba(180, 83, 42, 0.28);
+  box-shadow: 0 8px 28px -4px rgba(180, 83, 42, 0.12);
+}
+
+/* 2. Room Studio Design Board Polish */
+.studio-slot-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.studio-slot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -2px rgba(0, 0, 0, 0.08);
+}
+.studio-slot-card:hover .slot-visual img {
+  transform: scale(1.04);
+}
+.studio-package-badge {
+  background: var(--paper-warm, #f5f0e6);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.badge-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.badge-price {
+  font-size: 24px;
+  font-family: var(--serif, Georgia, serif);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* 3. Kitchen Studio Feature */
+.kitchen-section {
+  border-top: 1px solid var(--line);
+}
+.kitchen-image {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.kitchen-image .image-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 8px 14px;
+  background: rgba(32, 26, 22, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+}
+
+/* 4. Mobile Refinements for Showroom Extensions & 0-Overflow */
+@media (max-width: 680px) {
+  .studio-top-intro {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .studio-package-badge {
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+}
+

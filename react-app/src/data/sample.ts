@@ -33,8 +33,8 @@ export const sampleProducts: Product[] = [
       'Blot spills immediately with a clean, dry undyed cloth; avoid vigorous rubbing.',
       'Professional in-situ upholstery cleaning recommended annually.',
     ],
-    availability: 'Made to order · Handcrafted in 6–8 weeks',
-    deliveryInfo: 'Complimentary white-glove delivery included: room-of-choice placement, foot assembly, and all packaging removed for recycling.',
+    availability: 'Made to order · 3 to 5 weeks in Kathmandu workshop',
+    deliveryInfo: 'Scheduled Kathmandu Valley delivery included: room-of-choice placement, leveling, and all packaging removed for recycling.',
     galleryImages: [
       { src: 'sofa.webp', label: 'Studio portrait', alt: 'Haven Sofa studio portrait in Oatmeal linen' },
       { src: 'hero-chalk-wide.webp', label: 'Living room context', alt: 'Haven Sofa styled in the Chandani living room' },
@@ -216,8 +216,8 @@ export const sampleProducts: Product[] = [
       'Dab liquid spills with an undyed absorbent cloth immediately.',
       'Professional rug cleaning every 2 years.',
     ],
-    availability: 'In stock · Dispatches in 5–7 business days',
-    deliveryInfo: 'Direct white-glove room placement with protective felt underpad included.',
+    availability: 'In stock · Ready for showroom inspection',
+    deliveryInfo: 'Direct Kathmandu Valley room placement with protective felt underpad included.',
     galleryImages: [
       { src: 'product-ink.webp', label: 'Flat lay view', alt: 'Frame Ink carpet weave and ivory border' },
       { src: 'room-ink.webp', label: 'Room context', alt: 'Frame Ink carpet in styled living room' },
