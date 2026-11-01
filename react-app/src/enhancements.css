@@ -2346,14 +2346,37 @@ html.lenis, html.lenis body {
   left: 16px;
   right: 16px;
   padding: 12px 18px;
-  background: rgba(26, 26, 28, 0.78);
+  background: rgba(26, 26, 28, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 6px;
   color: #ffffff;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 5;
+}
+
+.palette-info-block {
+  display: flex;
   flex-direction: column;
   gap: 2px;
+}
+
+.palette-swatches-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.palette-swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  display: inline-block;
 }
 
 .visual-overlay-caption .eyebrow {
@@ -2365,6 +2388,104 @@ html.lenis, html.lenis body {
 .visual-overlay-caption strong {
   font-size: 13px;
   font-weight: 500;
+}
+
+/* Floating Hotspot Markers on Curated Photo */
+.collection-photo-hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.editorial-hotspot-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.hotspot-trigger-pin {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.editorial-hotspot-marker:hover .hotspot-trigger-pin,
+.editorial-hotspot-marker.active .hotspot-trigger-pin {
+  transform: scale(1.2);
+  background: var(--rust);
+}
+
+.pin-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--rust);
+  opacity: 0;
+  animation: pinRipple 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes pinRipple {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.hotspot-preview-card {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+}
+
+.editorial-hotspot-marker:hover .hotspot-preview-card,
+.editorial-hotspot-marker.active .hotspot-preview-card {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hotspot-preview-card .preview-cat {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.hotspot-preview-card strong {
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.hotspot-preview-card .preview-price {
+  font-size: 11px;
+  color: var(--rust);
+  font-weight: 600;
 }
 
 .editorial-story-content {
@@ -2403,7 +2524,7 @@ html.lenis, html.lenis body {
 .pieces-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   margin-top: 10px;
 }
 
@@ -2411,8 +2532,28 @@ html.lenis, html.lenis body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
   border-bottom: 1px dashed var(--line);
+  transition: background 0.2s ease;
+}
+
+.piece-row.highlighted {
+  background: var(--paper-warm, #f7f3eb);
+  border-bottom-color: transparent;
+}
+
+.piece-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.piece-index {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 12px;
+  color: var(--rust);
+  font-weight: 600;
 }
 
 .piece-meta strong {
@@ -2459,6 +2600,14 @@ html.lenis, html.lenis body {
   padding-top: 16px;
   border-top: 1px solid var(--line);
   gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ensemble-buttons-cluster {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .ensemble-pricing span {
@@ -2491,7 +2640,10 @@ html.lenis, html.lenis body {
 }
 
 .room-pill {
-  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
   background: var(--white, #fffdf8);
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -2502,10 +2654,21 @@ html.lenis, html.lenis body {
   transition: all 0.2s ease;
 }
 
+.room-pill-num {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 12px;
+  color: var(--rust);
+  font-weight: 600;
+}
+
 .room-pill.active {
   background: var(--rust);
   border-color: var(--rust);
   color: #ffffff;
+}
+
+.room-pill.active .room-pill-num {
+  color: #ffd8bf;
 }
 
 .room-editorial-display {
@@ -2531,6 +2694,21 @@ html.lenis, html.lenis body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.photo-env-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  background: rgba(26, 26, 28, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
 }
 
 .photo-corner-badge {
@@ -2602,10 +2780,16 @@ html.lenis, html.lenis body {
   display: flex;
   gap: 14px;
   align-items: center;
-  padding: 10px;
+  padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white, #fffdf8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.room-prod-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
 .room-prod-card .prod-thumb {
@@ -2626,7 +2810,30 @@ html.lenis, html.lenis body {
 .room-prod-card .prod-details {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+  flex: 1;
+}
+
+.prod-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prod-quick-save {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.prod-quick-save:hover,
+.prod-quick-save.saved {
+  color: var(--rust);
 }
 
 .room-prod-card .prod-details strong {
@@ -2644,11 +2851,40 @@ html.lenis, html.lenis body {
   color: var(--ink);
 }
 
+.prod-card-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.prod-card-links .try-link {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .room-cta-row {
   display: flex;
   gap: 12px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+/* Tactile Pills for Materials Explorer */
+.group-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tactile-pill {
+  font-size: 10px;
+  color: var(--rust);
+  background: rgba(180, 83, 42, 0.08);
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
 }
 
 /* 03. Distinctive Showcase: Materials Explorer & Planning Assistant */

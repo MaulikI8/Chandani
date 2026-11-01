@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { AnimatePresence, m } from 'motion/react';
 import type { Product } from '../data/types';
 import { useApp } from '../state/AppContext';
 import { asset } from '../data/service';
@@ -408,11 +409,18 @@ export function ProductPage() {
       <div className="product-hero-layout">
         <div className="product-gallery-stage">
           <div className="product-main-view">
-            <img
-              src={asset(activeImage.src)}
-              alt={activeImage.alt}
-              style={galleryIndex === 0 ? focusStyle(p) : undefined}
-            />
+            <AnimatePresence mode="wait">
+              <m.img
+                key={activeImage.src}
+                src={asset(activeImage.src)}
+                alt={activeImage.alt}
+                style={galleryIndex === 0 ? focusStyle(p) : undefined}
+                initial={false}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0.88 }}
+                transition={{ duration: 0.22 }}
+              />
+            </AnimatePresence>
           </div>
 
           <div className="product-gallery-thumbnails" role="group" aria-label="Product photography angles">

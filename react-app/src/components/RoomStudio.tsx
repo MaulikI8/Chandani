@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence, m } from 'motion/react';
 import { useApp } from '../state/AppContext';
 import { asset, formatNPR } from '../data/service';
 import { Icon } from './Icon';
@@ -83,7 +84,18 @@ export function RoomStudio() {
         {/* Slot 1: Seating */}
         <div className="studio-slot-card">
           <div className="slot-visual">
-            <img src={asset(selectedSofa.image)} alt={selectedSofa.name} loading="lazy" />
+            <AnimatePresence mode="wait">
+              <m.img
+                key={selectedSofa.id}
+                src={asset(selectedSofa.image)}
+                alt={selectedSofa.name}
+                loading="lazy"
+                initial={false}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0.85, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
+              />
+            </AnimatePresence>
             <span className="slot-badge">01 / SEATING ANCHOR</span>
           </div>
           <div className="slot-details">
@@ -111,7 +123,18 @@ export function RoomStudio() {
         {/* Slot 2: Carpet Foundation */}
         <div className="studio-slot-card">
           <div className="slot-visual">
-            <img src={asset(selectedCarpet.image)} alt={selectedCarpet.name} loading="lazy" />
+            <AnimatePresence mode="wait">
+              <m.img
+                key={selectedCarpet.id}
+                src={asset(selectedCarpet.image)}
+                alt={selectedCarpet.name}
+                loading="lazy"
+                initial={false}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0.85, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
+              />
+            </AnimatePresence>
             <span className="slot-badge">02 / CARPET FOUNDATION</span>
           </div>
           <div className="slot-details">
@@ -139,7 +162,18 @@ export function RoomStudio() {
         {/* Slot 3: Hardwood Joinery */}
         <div className="studio-slot-card">
           <div className="slot-visual">
-            <img src={asset(selectedTable.image)} alt={selectedTable.name} loading="lazy" />
+            <AnimatePresence mode="wait">
+              <m.img
+                key={selectedTable.id}
+                src={asset(selectedTable.image)}
+                alt={selectedTable.name}
+                loading="lazy"
+                initial={false}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0.85, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
+              />
+            </AnimatePresence>
             <span className="slot-badge">03 / HARDWOOD JOINERY</span>
           </div>
           <div className="slot-details">
@@ -167,7 +201,18 @@ export function RoomStudio() {
         {/* Slot 4: Lighting & Accents */}
         <div className="studio-slot-card">
           <div className="slot-visual">
-            <img src={asset(selectedAccent.image)} alt={selectedAccent.name} loading="lazy" />
+            <AnimatePresence mode="wait">
+              <m.img
+                key={selectedAccent.id}
+                src={asset(selectedAccent.image)}
+                alt={selectedAccent.name}
+                loading="lazy"
+                initial={false}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0.85, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
+              />
+            </AnimatePresence>
             <span className="slot-badge">04 / ACCENT &amp; LIGHTING</span>
           </div>
           <div className="slot-details">

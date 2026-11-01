@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence, m } from 'motion/react';
 import { useApp } from '../state/AppContext';
 import { asset, formatNPR } from '../data/service';
 import type { RoomId } from '../data/types';
@@ -81,7 +82,7 @@ const roomEditorials: RoomEditorial[] = [
 ];
 
 export function ShopByRoom() {
-  const { openProduct, openTry, openEnquiry } = useApp();
+  const { openProduct, openTry, openEnquiry, toggleSave, saved } = useApp();
   const [activeRoomId, setActiveRoomId] = useState<RoomId>('living');
   const current = roomEditorials.find((r) => r.id === activeRoomId) ?? roomEditorials[0];
 
@@ -98,7 +99,7 @@ export function ShopByRoom() {
       </div>
 
       <div className="room-nav-pills" role="tablist" aria-label="Select room editorial">
-        {roomEditorials.map((r) => (
+        {roomEditorials.map((r, idx) => (
           <button
             key={r.id}
             type="button"
@@ -107,71 +108,106 @@ export function ShopByRoom() {
             className={`room-pill${activeRoomId === r.id ? ' active' : ''}`}
             onClick={() => setActiveRoomId(r.id)}
           >
-            {r.name.split(' ')[0]}
+            <span className="room-pill-num">0{idx + 1}</span>
+            <span className="room-pill-label">{r.name.split(' ')[0]}</span>
           </button>
         ))}
       </div>
 
-      <div className="room-editorial-display">
-        <div className="room-display-photo">
-          <img src={asset(current.image)} alt={current.name} loading="lazy" />
-          <div className="photo-corner-badge">
-            <span className="eyebrow">ARCHITECTURAL GUIDANCE</span>
-            <p>{current.architecturalNote}</p>
-          </div>
-        </div>
-
-        <div className="room-display-info">
-          <div className="info-header">
-            <span className="eyebrow">{current.id.toUpperCase()} ENVIRONMENT</span>
-            <h3>{current.name}</h3>
-            <p className="tagline">{current.tagline}</p>
-            <p className="description">{current.description}</p>
-          </div>
-
-          <div className="room-featured-products">
-            <span className="eyebrow">IDENTIFIABLE PIECES IN THIS ROOM</span>
-            <div className="room-products-grid">
-              {current.products.map((prod) => (
-                <div key={prod.id} className="room-prod-card">
-                  <div className="prod-thumb">
-                    <img src={asset(prod.image)} alt={prod.name} loading="lazy" />
-                  </div>
-                  <div className="prod-details">
-                    <strong>{prod.name}</strong>
-                    <span className="prod-role">{prod.role}</span>
-                    <span className="prod-price">{formatNPR(prod.priceNPR)}</span>
-                    <button
-                      type="button"
-                      className="text-link-small"
-                      onClick={() => openProduct(prod.id)}
-                    >
-                      View specifications ↗
-                    </button>
-                  </div>
-                </div>
-              ))}
+      <AnimatePresence mode="wait">
+        <m.div
+          key={current.id}
+          className="room-editorial-display"
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0.9, y: -10 }}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="room-display-photo">
+            <img src={asset(current.image)} alt={current.name} loading="lazy" />
+            <div className="photo-corner-badge">
+              <span className="eyebrow">ARCHITECTURAL GUIDANCE</span>
+              <p>{current.architecturalNote}</p>
+            </div>
+            <div className="photo-env-tag">
+              <span>{current.name.toUpperCase()}</span>
             </div>
           </div>
 
-          <div className="room-cta-row">
-            <button
-              type="button"
-              className="button"
-              onClick={() => openTry(current.products[0]?.id, current.id)}
-            >
-              Experience in Try the Room <Icon />
-            </button>
-            <button
-              type="button"
-              className="button outline"
-              onClick={() => openEnquiry(`${current.name} Design Consultation`, 'private')}
-            >
-              Consult on this room
-            </button>
+          <div className="room-display-info">
+            <div className="info-header">
+              <span className="eyebrow">{current.id.toUpperCase()} ENVIRONMENT</span>
+              <h3>{current.name}</h3>
+              <p className="tagline">{current.tagline}</p>
+              <p className="description">{current.description}</p>
+            </div>
+
+            <div className="room-featured-products">
+              <span className="eyebrow">IDENTIFIABLE PIECES IN THIS ROOM</span>
+              <div className="room-products-grid">
+                {current.products.map((prod) => {
+                  const isSaved = saved.includes(prod.id);
+                  return (
+                    <div key={prod.id} className="room-prod-card">
+                      <div className="prod-thumb">
+                        <img src={asset(prod.image)} alt={prod.name} loading="lazy" />
+                      </div>
+                      <div className="prod-details">
+                        <div className="prod-name-row">
+                          <strong>{prod.name}</strong>
+                          <button
+                            type="button"
+                            className={`prod-quick-save${isSaved ? ' saved' : ''}`}
+                            onClick={() => toggleSave(prod.id)}
+                            aria-label={`${isSaved ? 'Remove' : 'Save'} ${prod.name}`}
+                          >
+                            <Icon name="save" />
+                          </button>
+                        </div>
+                        <span className="prod-role">{prod.role}</span>
+                        <span className="prod-price">{formatNPR(prod.priceNPR)}</span>
+                        <div className="prod-card-links">
+                          <button
+                            type="button"
+                            className="text-link-small"
+                            onClick={() => openProduct(prod.id)}
+                          >
+                            Specifications ↗
+                          </button>
+                          <button
+                            type="button"
+                            className="text-link-small try-link"
+                            onClick={() => openTry(prod.id, current.id)}
+                          >
+                            Try in Room ↗
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="room-cta-row">
+              <button
+                type="button"
+                className="button"
+                onClick={() => openTry(current.products[0]?.id, current.id)}
+              >
+                Experience in Try the Room <Icon />
+              </button>
+              <button
+                type="button"
+                className="button outline"
+                onClick={() => openEnquiry(`${current.name} Design Consultation`, 'private')}
+              >
+                Consult on this room
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
+        </m.div>
+      </AnimatePresence>
     </section>
   );
 }
