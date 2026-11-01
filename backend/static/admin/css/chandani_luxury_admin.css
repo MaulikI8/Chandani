@@ -323,7 +323,7 @@ div.breadcrumbs a:hover {
 }
 
 .module caption {
-  background: #ffffff !important;
+  background: var(--bg-card) !important;
   border-bottom: 2px solid var(--border-light) !important;
   padding: 16px 24px !important;
   text-align: left !important;
@@ -334,7 +334,7 @@ div.breadcrumbs a:hover {
   font-family: var(--font-serif) !important;
   font-size: 20px !important;
   font-weight: 600 !important;
-  color: var(--primary) !important;
+  color: var(--text-main) !important;
   text-decoration: none !important;
   letter-spacing: 0.02em;
 }
@@ -345,6 +345,7 @@ div.breadcrumbs a:hover {
 }
 
 .module tr {
+  background-color: var(--bg-card) !important;
   border-bottom: 1px solid var(--border-light) !important;
   transition: background-color 0.15s ease;
 }
@@ -798,3 +799,111 @@ body.login .submit-row input[type="submit"]:hover {
   box-shadow: 0 6px 18px rgba(180, 83, 42, 0.35);
   transform: translateY(-1px);
 }
+
+/* ==========================================================================
+   RECENT ACTIONS & CONTENT-RELATED SIDEBAR
+   ========================================================================== */
+#content-related {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+#content-related h2 {
+  font-family: var(--font-serif) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  background: var(--bg-card-subtle) !important;
+  color: var(--text-main) !important;
+  padding: 16px 20px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+#content-related .module {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
+}
+
+#content-related h3 {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--text-muted) !important;
+  padding: 14px 20px 8px !important;
+  margin: 0 !important;
+}
+
+#content-related ul {
+  padding: 0 20px 16px !important;
+  margin: 0 !important;
+}
+
+#content-related li {
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   DARK MODE ENHANCEMENTS
+   ========================================================================== */
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  --primary: #12100e;
+  --primary-hover: #1c1815;
+  --bg-sand: #141210;
+  --bg-card: #1c1815;
+  --bg-card-subtle: #25201b;
+  --border-card: #332b23;
+  --border-light: #2c251e;
+  --text-main: #f5f2ec;
+  --text-muted: #b8aea1;
+  --text-soft: #8a8073;
+}
+
+[data-theme="dark"] html,
+[data-theme="dark"] body {
+  background-color: var(--bg-sand) !important;
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .module caption {
+  background: var(--bg-card) !important;
+  border-bottom: 2px solid var(--border-light) !important;
+}
+
+[data-theme="dark"] .module caption a.section:link,
+[data-theme="dark"] .module caption a.section:visited {
+  color: var(--accent-gold) !important;
+}
+
+[data-theme="dark"] .module tr {
+  background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .module tr:hover {
+  background-color: var(--bg-card-subtle) !important;
+}
+
+[data-theme="dark"] .module th a:link,
+[data-theme="dark"] .module th a:visited {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] #content-related {
+  background: var(--bg-card) !important;
+  border-color: var(--border-card) !important;
+}
+
+[data-theme="dark"] #content-related h2 {
+  background: var(--bg-card-subtle) !important;
+  color: var(--accent-gold) !important;
+  border-bottom-color: var(--border-light) !important;
+}
+
