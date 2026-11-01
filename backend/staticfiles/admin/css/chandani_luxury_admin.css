@@ -1,0 +1,800 @@
+/* ==========================================================================
+   CHANDANI ATELIER · KATHMANDU
+   Bespoke Luxury Admin Panel & Catalogue Management System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #191411;
+  --primary-hover: #261f1a;
+  --accent-rust: #b4532a;
+  --accent-rust-hover: #c96033;
+  --accent-gold: #c59b63;
+  --accent-gold-soft: rgba(197, 155, 99, 0.15);
+  --bg-sand: #f6f3ed;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #faf8f5;
+  --border-card: #e5ded4;
+  --border-light: #ece5dc;
+  --border-active: #c59b63;
+  --text-main: #1d1714;
+  --text-muted: #6e6458;
+  --text-soft: #9c9183;
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(25, 20, 17, 0.04);
+  --shadow-md: 0 8px 24px rgba(25, 20, 17, 0.07);
+  --shadow-lg: 0 16px 40px rgba(25, 20, 17, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* Global resets & typography */
+html, body {
+  font-family: var(--font-sans) !important;
+  background-color: var(--bg-sand) !important;
+  color: var(--text-main) !important;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   TOP HEADER & BRAND BAR
+   ========================================================================== */
+#header {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-bottom: 2px solid var(--accent-gold) !important;
+  padding: 14px 28px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+#header #branding {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#header #branding h1 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font-serif) !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+#header #branding h1 a:link,
+#header #branding h1 a:visited {
+  color: #f7f4ef !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.brand-emblem-svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent-gold);
+  fill: none;
+  stroke-width: 2;
+}
+
+.brand-subhead {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold);
+  background: rgba(197, 155, 99, 0.14);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(197, 155, 99, 0.3);
+}
+
+#user-tools {
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  color: #ded6cb !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+#user-tools a {
+  color: #f7f4ef !important;
+  border-bottom: none !important;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#user-tools a:hover {
+  background: var(--accent-rust);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.storefront-pill-btn {
+  background: var(--accent-rust) !important;
+  color: #ffffff !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 2px 8px rgba(180, 83, 42, 0.35);
+  transition: all 0.2s ease !important;
+}
+
+.storefront-pill-btn:hover {
+  background: var(--accent-rust-hover) !important;
+  box-shadow: 0 4px 14px rgba(180, 83, 42, 0.5) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ==========================================================================
+   BREADCRUMBS
+   ========================================================================== */
+div.breadcrumbs {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 12px 28px !important;
+  font-size: 12px !important;
+  color: var(--text-soft) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+div.breadcrumbs a {
+  color: var(--accent-rust) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+div.breadcrumbs a:hover {
+  text-decoration: underline !important;
+  color: var(--primary) !important;
+}
+
+/* ==========================================================================
+   MAIN CONTENT WRAPPER
+   ========================================================================== */
+#content {
+  padding: 28px !important;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   ATELIER EXECUTIVE DASHBOARD BANNER (Top of Admin Index)
+   ========================================================================== */
+.atelier-dashboard-hero {
+  background: linear-gradient(135deg, #1c1613 0%, #2b211a 100%);
+  border: 1px solid rgba(197, 155, 99, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-md);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.atelier-dashboard-hero::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(197, 155, 99, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-tagline-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.atelier-hero-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  color: #f7f4ef;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.atelier-hero-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d1c7bc;
+  max-width: 780px;
+  margin: 0 0 20px 0;
+}
+
+.executive-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.metric-value {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.metric-sub {
+  font-size: 11px;
+  color: #a89f94;
+}
+
+/* Quick links within dashboard */
+.atelier-quick-launchers {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.quick-launch-link {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f7f4ef !important;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.quick-launch-link:hover {
+  background: var(--accent-rust);
+  border-color: var(--accent-rust);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   APP LIST & MODEL CARDS (Admin Index)
+   ========================================================================== */
+.app-atelier.module,
+.module {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  margin-bottom: 28px !important;
+  overflow: hidden;
+}
+
+.module caption {
+  background: #ffffff !important;
+  border-bottom: 2px solid var(--border-light) !important;
+  padding: 16px 24px !important;
+  text-align: left !important;
+}
+
+.module caption a.section:link,
+.module caption a.section:visited {
+  font-family: var(--font-serif) !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--primary) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+}
+
+.module table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.module tr {
+  border-bottom: 1px solid var(--border-light) !important;
+  transition: background-color 0.15s ease;
+}
+
+.module tr:hover {
+  background-color: var(--bg-card-subtle) !important;
+}
+
+.module th, .module td {
+  padding: 14px 24px !important;
+  font-size: 13px !important;
+  vertical-align: middle !important;
+}
+
+.module th a:link,
+.module th a:visited {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.module th a:hover {
+  color: var(--accent-rust) !important;
+}
+
+.module td a.addlink:link,
+.module td a.addlink:visited {
+  background: rgba(180, 83, 42, 0.08) !important;
+  color: var(--accent-rust) !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(180, 83, 42, 0.2) !important;
+  transition: all 0.15s ease !important;
+}
+
+.module td a.addlink:hover {
+  background: var(--accent-rust) !important;
+  color: #fff !important;
+  border-color: var(--accent-rust) !important;
+}
+
+.module td a.changelink:link,
+.module td a.changelink:visited {
+  background: rgba(25, 20, 17, 0.05) !important;
+  color: var(--primary) !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(25, 20, 17, 0.12) !important;
+  transition: all 0.15s ease !important;
+}
+
+.module td a.changelink:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+/* ==========================================================================
+   CHANGELISTS (DATA TABLES)
+   ========================================================================== */
+#changelist {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+#toolbar {
+  background: var(--bg-card-subtle) !important;
+  border-bottom: 1px solid var(--border-card) !important;
+  padding: 16px 24px !important;
+}
+
+#searchbar {
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: 999px !important;
+  padding: 8px 16px !important;
+  width: 320px !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+  transition: all 0.2s ease;
+}
+
+#searchbar:focus {
+  border-color: var(--accent-rust) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(180, 83, 42, 0.15) !important;
+}
+
+#changelist-search input[type="submit"] {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 8px 18px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+#changelist-search input[type="submit"]:hover {
+  background: var(--accent-rust) !important;
+}
+
+/* Table */
+#result_list {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 0 !important;
+}
+
+#result_list th {
+  background: #f8f6f1 !important;
+  border-bottom: 2px solid var(--border-card) !important;
+  border-top: none !important;
+  padding: 14px 18px !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+}
+
+#result_list td {
+  padding: 14px 18px !important;
+  font-size: 13px !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  vertical-align: middle !important;
+}
+
+#result_list tr:hover td {
+  background-color: var(--bg-card-subtle) !important;
+}
+
+#result_list tr.selected td {
+  background-color: rgba(197, 155, 99, 0.08) !important;
+}
+
+/* Action Bar */
+div.actions {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 12px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 12px !important;
+}
+
+div.actions select {
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 6px 10px !important;
+}
+
+div.actions button.button {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 7px 16px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+div.actions button.button:hover {
+  background: var(--accent-rust) !important;
+}
+
+/* Filters Drawer */
+#changelist-filter {
+  background: #ffffff !important;
+  border-left: 1px solid var(--border-card) !important;
+  padding: 20px !important;
+  border-radius: 0 !important;
+}
+
+#changelist-filter h2 {
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--accent-gold) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+#changelist-filter h3 {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+  margin-top: 14px !important;
+  margin-bottom: 6px !important;
+}
+
+#changelist-filter ul {
+  padding-left: 0 !important;
+  margin-bottom: 14px !important;
+}
+
+#changelist-filter li {
+  margin-bottom: 4px !important;
+}
+
+#changelist-filter li.selected a {
+  color: var(--accent-rust) !important;
+  font-weight: 700 !important;
+  border-left: 3px solid var(--accent-rust);
+  padding-left: 6px;
+}
+
+/* ==========================================================================
+   CHANGE FORMS & FIELDSETS
+   ========================================================================== */
+.form-row {
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 16px 20px !important;
+}
+
+fieldset {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 24px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+fieldset h2 {
+  background: #f8f6f1 !important;
+  border-bottom: 1px solid var(--border-card) !important;
+  padding: 14px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--primary) !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 12px !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02) !important;
+  transition: all 0.18s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-rust) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(180, 83, 42, 0.12) !important;
+}
+
+/* Submit bar */
+.submit-row {
+  background: #ffffff !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 16px 20px !important;
+  box-shadow: var(--shadow-sm) !important;
+  display: flex !important;
+  gap: 10px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.submit-row input[type="submit"].default,
+.submit-row input[name="_save"] {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 10px 24px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.15s ease;
+}
+
+.submit-row input[type="submit"].default:hover,
+.submit-row input[name="_save"]:hover {
+  background: var(--accent-rust) !important;
+  transform: translateY(-1px);
+}
+
+.submit-row input[type="submit"] {
+  background: rgba(25, 20, 17, 0.06) !important;
+  color: var(--primary) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: 999px !important;
+  padding: 9px 20px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+
+.submit-row a.deletelink {
+  background: #fff0ed !important;
+  color: #c53030 !important;
+  border: 1px solid #feb2b2 !important;
+  border-radius: 999px !important;
+  padding: 8px 18px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   BESPOKE LUXURY LOGIN SCREEN
+   ========================================================================== */
+body.login {
+  background: radial-gradient(circle at center, #fbf9f5 0%, #ede6db 100%) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+body.login #container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 460px !important;
+}
+
+body.login #header {
+  display: none !important;
+}
+
+body.login #content {
+  background: #ffffff !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 44px 40px !important;
+  box-shadow: var(--shadow-lg) !important;
+  position: relative;
+}
+
+.login-brand-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-emblem {
+  width: 48px;
+  height: 48px;
+  stroke: var(--accent-gold);
+  stroke-width: 1.8;
+  fill: none;
+  margin-bottom: 14px;
+}
+
+.login-nepali-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
+}
+
+.login-subhead {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-rust);
+  font-weight: 600;
+  display: block;
+}
+
+.login-editorial-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+body.login .form-row {
+  border: none !important;
+  padding: 10px 0 !important;
+}
+
+body.login label {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+body.login input[type="text"],
+body.login input[type="password"] {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 14px !important;
+  font-size: 14px !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+body.login .submit-row {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 24px 0 0 0 !important;
+  background: transparent !important;
+}
+
+body.login .submit-row input[type="submit"] {
+  width: 100% !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 13px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  border-radius: 999px !important;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(25, 20, 17, 0.2);
+  transition: all 0.2s ease;
+}
+
+body.login .submit-row input[type="submit"]:hover {
+  background: var(--accent-rust) !important;
+  box-shadow: 0 6px 18px rgba(180, 83, 42, 0.35);
+  transform: translateY(-1px);
+}
