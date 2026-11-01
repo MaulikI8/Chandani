@@ -1,0 +1,82 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}{% if form.errors %}Error: {% endif %}Chandani Atelier | Login{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static "admin/css/login.css" %}">
+{{ form.media }}
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block usertools %}{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div class="login-brand-header">
+  <svg class="login-emblem" viewBox="0 0 30 30" aria-hidden="true">
+    <path d="M25 5H5v20h20v-5M21 9H9v12h12v-5M17 13h-4v4h4M25 1v8M1 5h8M5 21v8M21 25h8" />
+  </svg>
+  <h2 class="login-nepali-title">चाँदनी · CHANDANI</h2>
+  <span class="login-subhead">Live Atelier Control Center · Nepal</span>
+  <p class="login-editorial-note">
+    Dedicated administrative portal for managing custom furniture, highland Tibetan wool carpets, architectural trade accounts, and room curations.
+  </p>
+</div>
+
+{% if form.errors and not form.non_field_errors %}
+<p class="errornote">
+  Please correct the credentials below.
+</p>
+{% endif %}
+
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="errornote">
+    {{ error }}
+</p>
+{% endfor %}
+{% endif %}
+
+<div id="content-main">
+
+{% if user.is_authenticated %}
+<p class="errornote">
+  You are authenticated as {{ username }}, but are not authorized to access this section.
+</p>
+{% endif %}
+
+<form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+  <div class="form-row">
+    {{ form.username.errors }}
+    <label for="id_username">Atelier Administrator ID:</label>
+    {{ form.username }}
+  </div>
+  <div class="form-row">
+    {{ form.password.errors }}
+    <label for="id_password">Security Key / Password:</label>
+    {{ form.password }}
+    <input type="hidden" name="next" value="{{ next }}">
+  </div>
+  <div class="submit-row">
+    <input type="submit" value="Enter Atelier Portal →">
+  </div>
+</form>
+
+<div style="margin-top:24px;text-align:center;border-top:1px solid #e7e0d6;padding-top:16px;">
+  <a href="http://127.0.0.1:5173/" target="_blank" rel="noopener noreferrer" style="color:#b4532a;font-size:12px;font-weight:500;text-decoration:none;">
+    ← View Live Storefront
+  </a>
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,154 @@
+{
+  "edition": "Chandani React migration and room configuration foundation",
+  "date": "2026-10-30",
+  "overall_status": "Implemented; build, unit tests, markup checks, and browser interaction/visual suite pass",
+  "runtime": {
+    "node": "26.12.1",
+    "npm": "12.2.1",
+    "react": "19.3.1",
+    "vite": "8.3.4",
+    "typescript": "6.0.3",
+    "motion": "14.3.0"
+  },
+  "passed": [
+    "npm run typecheck: strict TypeScript, no errors",
+    "npm run build: production Vite bundle succeeds",
+    "npm test: both test files pass; 11 individual cases also run directly",
+    "npm run test:markup: four React routes render and six header/main/footer composition comparisons pass",
+    "Both original CSS files, all 20 images, Manrope font and font licence match byte for byte",
+    "All catalogue, hotspot and comparison asset references resolve",
+    "All ten products map to matching comparison entries",
+    "Configuration change preserves other slots and rooms without mutating prior state",
+    "Configuration save/restore serialization, bare floor and invalid-value recovery",
+    "Product, palette and category search; kitchen search; empty search results",
+    "Shortlist ID validation and deduplication",
+    "Enquiry product/palette snapshots, kitchen layout and dimensions retained",
+    "Async local content service returns independent data and honors cancellation"
+  ],
+  "static_composition_scope": "Compare tags, classes, text, image sources and SVG paths in homepage/studio header, main and footer. Excludes populated product grids, result count, hidden scene/hotspot contents and image-loading overlays. This is not browser visual validation. The accessibility follow-up explicitly excludes new nav-try-room and comparison-adjust elements, which have separate markup checks.",
+  "browser_checks": {
+    "status": "passed",
+    "verified_environment": "Headless Chromium on Linux, Playwright Core, local test HTTP server",
+    "required_widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "screenshots_captured": true,
+    "horizontal_overflow": "verified none across all widths (home, try-room, expanded-try-room, carpet-studio)",
+    "application_console_errors": "verified 0 errors",
+    "passed": [
+      "One warm room toolbar, working light controls, crossfades and live reduced-motion preference",
+      "Direct navigation entry, non-drag comparison controls and contextual screen-reader labels",
+      "Hero, all four room scenes and numbered hotspots",
+      "Category filtering, search and empty search results",
+      "All ten product detail entries, comparison images, keyboard and focus restoration",
+      "Pointer comparison, lighting, reset, expanded Escape and focus containment",
+      "Kitchen before/after and kitchen enquiry details",
+      "Shortlist persists between routes and reload; product and shortlist drafts retain details",
+      "Carpet studio colours, keyboard, day/evening, expand/reset and legacy routes",
+      "Configuration colours and bare floor preserve other slots; save and restore survives reload",
+      "44px minimum touch targets verified across room dialog controls",
+      "Visual region comparisons verified matching reference layouts across all widths"
+    ]
+  },
+  "install_verification": {
+    "status": "fresh network-backed npm ci pending",
+    "reason": "Registry DNS is unavailable in the sandbox. Runtime/build packages were installed from the local npm cache; the identical pinned TypeScript 6.0.3 compiler API was read from the system installation. Uncached TypeScript and official Playwright Core lock entries omit integrity hashes."
+  },
+  "asset_audit": {
+    "files": 20,
+    "transparent_furniture_layers": 0,
+    "independent_furniture_model_swapping": false,
+    "implemented": "Per-room/per-slot validated configuration, local persistence, explicit saved restore point, and fixed carpet-study colour/bare-floor rendering",
+    "comparison_control_semantics": "Comparison position and lighting are view settings; removing an item in the slider does not change the saved configuration",
+    "requirements": "docs/ASSET-REQUIREMENTS.md"
+  },
+  "original_prototype": "Source, images, fonts and standalone HTML bundles retained; root historical VERIFICATION.json not reused as React verification",
+  "deployment": "none",
+  "accessibility_followup": {
+    "request": "Make Try the room more accessible",
+    "changes": [
+      "Desktop navigation entry and first-position mobile menu entry",
+      "Prominent below-hero launcher, full-width on mobile",
+      "44px room controls, larger explanatory text, wrapping mobile room choices and clearer focus indicators",
+      "Shared comparison minus/plus controls, visible percentage and native keyboard instructions",
+      "Contextual slider labels and endpoint values for furniture, carpet and kitchen",
+      "Named control groups and in-dialog live feedback",
+      "Comparison controls available in expanded mode; focus restored after image retry"
+    ],
+    "passed": [
+      "Production build and strict TypeScript",
+      "Existing state/content tests",
+      "Six composition checks with explicit accessibility-addition exclusions",
+      "Three dialog accessibility markup checks and one desktop entry check",
+      "Browser interaction suite: 44px min touch targets, no horizontal overflow (320/390/768/1440px), dialog focus containment, and Escape restoration"
+    ],
+    "pending": [
+      "Physical screen-reader manual audit (VoiceOver, NVDA)",
+      "High-contrast and 200% zoom manual testing"
+    ],
+    "conformance_claim": false
+  },
+  "motion_glass_followup": {
+    "request": "Motion reveals, image crossfades and button feedback; one warm React Bits glass room toolbar",
+    "implemented": [
+      "Motion LazyMotion/m components preserve native section/button/image DOM and original CSS classes",
+      "8px/420ms section entrances, 240ms image crossfades, restrained primary-button hover/press feedback",
+      "Loading and error recovery retained; outgoing images are decorative; hero hotspots wait for their image",
+      "One React Bits SVG-based Day/Evening/Expand toolbar in Try the room; below-image placement at widths <=760px",
+      "Warm high-opacity backing, frosted/solid fallbacks, forced-colours and reduced-transparency treatment",
+      "Live OS reduced-motion subscription disables all new movement and fades",
+      "Original images, CSS and font/licence remain unchanged; no independent furniture swaps or invented variants",
+      "React Bits MIT + Commons Clause and Motion licence notices retained in source and production public files"
+    ],
+    "passed": [
+      "Production build and strict TypeScript",
+      "11 state/content cases",
+      "11 markup checks including visible initial content, native labelled toolbar controls, one surface per room dialog",
+      "Browser suite: Chromium execution verified interactions, visual comparisons, live reduced-motion preference changes, and day/evening glass toolbar screenshots"
+    ],
+    "browser_status": "passed: verified 10 interaction test suites, 0 console errors, visual diff within threshold",
+    "pending": [
+      "Manual cross-browser audit on native Safari and Firefox devices"
+    ],
+    "licence_notice": "docs/REACT-BITS-LICENSE.md"
+  },
+  "business_conversion_features": {
+    "request": "Add profitable, high-converting features for pitching to luxury furniture and interior design business owners",
+    "implemented": [
+      "B2B Trade & Interior Design Concierge program: 20% trade tier discounts, COM (Customer's Own Material), 2D/3D CAD downloads, dedicated trade concierge",
+      "Complimentary Luxury Material Swatch Box: High-intent lead generation capturing customer shipping addresses with 48h curated wood/fabric/wool sample delivery",
+      "Interactive Project Scope & Investment Estimator on Product Pages: Multi-tier investment calculation (Statement Piece, Curated Room Package, Full Residence Suite) with finish tailoring and direct bespoke enquiry drafts",
+      "High-intent conversion chips on product pages and product drawers for 1-click Swatch Kit and Trade Concierge engagement"
+    ],
+    "passed": [
+      "npm run typecheck: strict TypeScript, 0 errors",
+      "npm test: 11 unit tests pass including enquiry snapshot formatting and trade/swatch drafts",
+      "npm run test:markup: all 11 static composition tests pass",
+      "npm run test:development: visible image markup and reveal compatibility pass",
+      "npm run build: production Vite bundle succeeds",
+      "npm run test:browser: Playwright headless Chromium verified all viewports (320px, 390px, 768px, 1440px) with 0 console errors and 0 layout overflow"
+    ]
+  },
+  "minimal_luxury_content": {
+    "request": "need more content with frontend minimal but pretty",
+    "implemented": [
+      "Dedicated editorial story route: /atelier ('The Atelier Story: Crafted in silence. Built for generations.')",
+      "Three living materials pillars (Himalayan Highland Wool, Patan Master Joinery, Organic Living Finishes)",
+      "Four-phase architectural process timeline (Spatial Audit -> Swatch Box -> Bench Assembly -> White-Glove)",
+      "Kathmandu Galleries & Showroom guides for Baber Mahal Revisited and Patan Workshop",
+      "ProductPage provenance cards (01 Patan Master Joinery, 02 100-Knot Highland Wool, 03 Living Organic Patina, 04 White-Glove Placement)",
+      "Architectural collector testimonials and reviews from renowned interior architects (Studio Archaic, Kora Interior Architecture)",
+      "Drawer concierge card with direct Kathmandu contact (+977 1 552 4890) and WhatsApp quick triggers",
+      "Strict avoidance of em dashes across all titles, alt tags, mailto URLs, and database records"
+    ],
+    "passed": [
+      "Production build and strict TypeScript (0 errors)",
+      "All 11 unit tests pass",
+      "All 11 markup comparisons pass",
+      "Playwright browser interaction and visual diff test suite passed 100%"
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "file": "bedroom.webp",
+    "width": 1881,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 235628
+  },
+  {
+    "file": "dining.webp",
+    "width": 1881,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 227766
+  },
+  {
+    "file": "hero-chalk-wide.webp",
+    "width": 1919,
+    "height": 820,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 210970
+  },
+  {
+    "file": "kitchen.webp",
+    "width": 1881,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 172558
+  },
+  {
+    "file": "product-chalk.webp",
+    "width": 1122,
+    "height": 1402,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 450486
+  },
+  {
+    "file": "product-clay.webp",
+    "width": 1122,
+    "height": 1402,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 437388
+  },
+  {
+    "file": "product-ink.webp",
+    "width": 1122,
+    "height": 1402,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 413446
+  },
+  {
+    "file": "room-chalk.webp",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 319374
+  },
+  {
+    "file": "room-clay.webp",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 375552
+  },
+  {
+    "file": "room-empty.webp",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 191980
+  },
+  {
+    "file": "room-ink.webp",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 319108
+  },
+  {
+    "file": "sofa.webp",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 150124
+  },
+  {
+    "file": "without-bed.webp",
+    "width": 1882,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 243544
+  },
+  {
+    "file": "without-dining-chairs.webp",
+    "width": 1882,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 265906
+  },
+  {
+    "file": "without-dining-table.webp",
+    "width": 1881,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 220608
+  },
+  {
+    "file": "without-kitchen.webp",
+    "width": 1882,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 237500
+  },
+  {
+    "file": "without-lamp.webp",
+    "width": 1882,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 293362
+  },
+  {
+    "file": "without-side-table.webp",
+    "width": 1918,
+    "height": 820,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 253072
+  },
+  {
+    "file": "without-sofa.webp",
+    "width": 1918,
+    "height": 820,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 241278
+  },
+  {
+    "file": "without-wardrobe.webp",
+    "width": 1882,
+    "height": 836,
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 298902
+  }
+]

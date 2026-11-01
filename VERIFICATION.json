@@ -1,0 +1,160 @@
+{
+  "edition": "Chandani \u2014 Try the room",
+  "scope": "Additive feature; approved whole-home pages retained",
+  "browser": "Cloud Chromium through the managed local preview",
+  "responsive_checks": [
+    {
+      "page": "home",
+      "iframe_viewport_width": 320,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 680,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 768,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 1440,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "home",
+      "iframe_viewport_width": 1850,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 320,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 680,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 768,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 1440,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "try-room-dialog",
+      "iframe_viewport_width": 1850,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 320,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 680,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 768,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 1440,
+      "horizontal_overflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "iframe_viewport_width": 1850,
+      "horizontal_overflow": false
+    }
+  ],
+  "functional_checks_passed": [
+    "Launch below the hero and from the mobile menu",
+    "All ten sample product detail entry points select the matching room and product",
+    "Living room: sofa, carpet and side table with/without images load",
+    "Dining room: table and chairs with/without images load",
+    "Bedroom: bed, table light and wardrobe with/without images load",
+    "Kitchen before/after design images load",
+    "Carpet Clay, Chalk and Ink choices update image, product name and saved product ID",
+    "Comparison 0 and 100 endpoints hide the divider and show the full selected image",
+    "Compare selects a divider position through the current piece",
+    "Keyboard ArrowRight changes the comparison value",
+    "Pointer drag changed the sofa divider from 72 to 86 percent",
+    "Evening lighting filter and Reset view",
+    "Expanded preview fills the viewport; Escape collapses it before closing the dialog",
+    "Saving in Try the room updates the shared shortlist",
+    "Direct and stacked product-detail enquiry handoffs select the correct product",
+    "Kitchen enquiry handoff selects Kitchen design on desktop and mobile",
+    "Closing the stacked room dialog restores focus to Try in the room in the product drawer",
+    "Original carpet studio Ink selection and keyboard slider still work",
+    "Standalone HTML comparison images are embedded and load",
+    "Standalone cross-page shortlist transfer and Try in the room from the carpet studio"
+  ],
+  "preservation_checks": {
+    "style.css": "Byte-identical to the approved source",
+    "catalogue.js": "Byte-identical to the approved source",
+    "index.html": "Only the Try the room launcher and new CSS/JS includes changed",
+    "atelier.html": "Only new CSS/JS includes added",
+    "app.js": "Only product-detail launch buttons, mobile-menu entry, and shared state/enquiry hooks added",
+    "original_assets": "Retained; eight separate without-item comparison assets added"
+  },
+  "application_console_errors_in_standalone_checks": [],
+  "notes": [
+    "Responsive checks use controlled iframe viewports, not physical devices.",
+    "Standalone HTML was tested via local HTTP; file:// behavior and other browsers were not separately tested.",
+    "The enlarged Try the room view is an in-page viewport mode, not the native Fullscreen API.",
+    "Two initial WebP encoding failures were repaired and their image loading rechecked before packaging.",
+    "Browser-extension errors and transient automation input timeouts were not application errors.",
+    "The original separate carpet studio native fullscreen control was not retested.",
+    "Room images and catalogue are illustrative; no actual backend or message transmission exists.",
+    "BASELINE-VERIFICATION.json records the previous approved edition, not additional checks of this revision."
+  ],
+  "static_checks": [
+    "No duplicate static IDs",
+    "All script and stylesheet content bundled",
+    "All static asset references resolve",
+    "Font bundled",
+    "No external navigation destinations"
+  ]
+}

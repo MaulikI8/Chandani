@@ -1,0 +1,137 @@
+{
+  "edition": "Chandani \u2014 Whole Home",
+  "browser": "Cloud Chromium via the managed local preview",
+  "responsive_checks": [
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 320,
+      "content_width": 305,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 390,
+      "content_width": 375,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 680,
+      "content_width": 665,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 768,
+      "content_width": 753,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 1024,
+      "content_width": 1009,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 1440,
+      "content_width": 1425,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "index.html",
+      "iframe_viewport_width": 1850,
+      "content_width": 1835,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 320,
+      "content_width": 305,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 390,
+      "content_width": 375,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 680,
+      "content_width": 665,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 768,
+      "content_width": 753,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 1024,
+      "content_width": 1009,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 1440,
+      "content_width": 1425,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    },
+    {
+      "page": "atelier.html",
+      "iframe_viewport_width": 1850,
+      "content_width": 1835,
+      "horizontal_overflow": false,
+      "broken_loaded_images": 0
+    }
+  ],
+  "functional_checks_passed": [
+    "Hero opens the same living-room image as an interactive scene",
+    "Living, kitchen, bedroom and dining scene switches",
+    "Furniture and kitchen-service hotspot selection",
+    "Product detail drawers",
+    "Shared shortlist add, remove and cross-page transfer",
+    "Ten sample products; category counts seating 2, carpets 3, dining 2, bedroom 1, lighting/decor 1, storage 1",
+    "Search for sofa and no-results state",
+    "Mobile navigation and search",
+    "Keyboard Escape closes native dialog when focused on its close control",
+    "Kitchen enquiry retains selected service, layout, dimensions and notes in its draft",
+    "Enquiry copy and edit actions",
+    "Carpet studio receives selected Chalk colour and retains furniture shortlist",
+    "Carpet colour change, keyboard comparison adjustment, visual lighting filter and reset",
+    "Mobile room entry scrolls the image and detail card into view",
+    "Standalone homepage image sources are embedded and loaded",
+    "Standalone cross-page carpet selection, shortlist and comparison controls"
+  ],
+  "application_console_errors_observed": [],
+  "notes": [
+    "Browser-extension metadata errors were excluded from application errors.",
+    "Responsive checks used controlled iframe viewports, not physical devices.",
+    "Standalone HTML was inspected through the local HTTP preview; file:// navigation and other browsers were not tested.",
+    "No backend, inventory API, payment or real message transmission exists in this design prototype.",
+    "No fullscreen or pointer-drag regression check was performed for this edition."
+  ],
+  "static_checks": [
+    "No duplicate static IDs",
+    "All script and stylesheet content bundled",
+    "All static asset references resolve",
+    "Font bundled",
+    "No external navigation destinations"
+  ]
+}

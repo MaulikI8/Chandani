@@ -1,0 +1,15 @@
+/* View actions belong with the existing navigation, clear of the photograph. */
+.room-toolbar.has-view-actions { flex-wrap: wrap; }
+.room-view-actions {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+.room-view-actions .text-link { min-height: 44px; font-size: 11px; }
+@media (max-width: 680px) {
+  .room-view-actions { justify-content: space-between; flex-wrap: wrap; padding-bottom: 12px; }
+}

@@ -1,0 +1,148 @@
+.furniture-tray {
+  padding-block: 24px;
+  color: #302b25;
+}
+
+.furniture-tray__heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.furniture-tray__heading p {
+  margin: 0 0 8px;
+  color: #71665b;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.furniture-tray__heading h3 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.furniture-tray__hint {
+  color: #71665b;
+  font-size: 12px;
+}
+
+.furniture-tray__viewport {
+  overflow: hidden;
+  padding: 5px;
+}
+
+.furniture-tray__track {
+  display: flex;
+  gap: 16px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.furniture-tray__slide {
+  flex: 0 0 190px;
+  min-width: 0;
+}
+
+.furniture-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.furniture-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: #eee9e1;
+  transition: border-color 180ms ease;
+}
+
+.furniture-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.furniture-card[aria-pressed="true"] .furniture-card__image {
+  border-color: #66513d;
+}
+
+.furniture-card__check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #574536;
+  color: white;
+  font-size: 14px;
+}
+
+.furniture-card__name,
+.furniture-card__finish {
+  display: block;
+}
+
+.furniture-card__name {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.furniture-card__finish {
+  margin-top: 4px;
+  color: #71665b;
+  font-size: 12px;
+}
+
+.furniture-card:focus-visible {
+  outline: 3px solid #755534;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .furniture-card:hover img {
+    transform: scale(1.035);
+  }
+}
+
+@media (max-width: 600px) {
+  .furniture-tray__slide {
+    flex-basis: 150px;
+  }
+
+  .furniture-tray__track {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .furniture-card__image,
+  .furniture-card__image img {
+    transition: none;
+  }
+
+  .furniture-card:hover img {
+    transform: none;
+  }
+}

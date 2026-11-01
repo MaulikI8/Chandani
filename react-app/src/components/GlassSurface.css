@@ -1,0 +1,50 @@
+/* React Bits SVG surface, adapted to Chandani's warm palette and one toolbar. */
+.glass-surface {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgb(255 253 248 / .9);
+  background: rgb(245 242 236 / .86);
+  color: var(--ink);
+  box-shadow: 0 3px 16px #201a1626, inset 0 1px 0 #fffdf8;
+  -webkit-backdrop-filter: blur(12px) saturate(1.03);
+  backdrop-filter: blur(12px) saturate(1.03);
+}
+.glass-surface--svg { backdrop-filter: var(--glass-filter) saturate(1.03); }
+.glass-surface__filter { position: absolute; width: 0; height: 0; pointer-events: none; }
+.glass-surface__content { position: relative; display: flex; align-items: center; gap: 8px; padding: 5px; border-radius: inherit; }
+.try-stage > .room-glass-toolbar { position: absolute; top: 12px; right: 12px; z-index: 4; max-width: calc(100% - 24px); }
+.room-glass-toolbar .try-lights { gap: 2px; margin: 0; flex-wrap: nowrap; }
+.room-glass-toolbar :is(.try-lights button, .try-expand) {
+  position: static;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.room-glass-toolbar .try-lights button[aria-pressed=true] { color: var(--paper); background: var(--ink); text-decoration: none; }
+.room-glass-toolbar .try-expand { border-left-color: #b7ada0; border-radius: 0 7px 7px 0; }
+.room-glass-toolbar button:hover { background: var(--paper); }
+.try-room-dialog .room-glass-toolbar button:focus-visible { outline: 3px solid var(--rust); outline-offset: -3px; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-surface { background: var(--paper); }
+}
+@media (max-width: 760px) {
+  /* A narrow photograph leaves too little space for a toolbar and the divider.
+     Keep the same controls directly below it with an unobstructed drag area. */
+  .try-stage > .room-glass-toolbar { position: relative; inset: auto; width: max-content; margin: 10px auto; }
+  .try-room-dialog.try-room-expanded .try-frame { width: min(100vw, calc((100dvh - 232px) * var(--try-ratio))); }
+}
+@media (prefers-reduced-motion: reduce), (prefers-reduced-transparency: reduce) {
+  .glass-surface { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--paper); }
+}
+@media (forced-colors: active) {
+  .glass-surface { -webkit-backdrop-filter: none; backdrop-filter: none; background: Canvas; border: 1px solid CanvasText; box-shadow: none; }
+  .room-glass-toolbar :is(.try-lights button, .try-expand) { color: ButtonText; border: 1px solid ButtonText; }
+  .room-glass-toolbar .try-lights button[aria-pressed=true] { color: HighlightText; background: Highlight; forced-color-adjust: none; }
+}

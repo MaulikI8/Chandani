@@ -1,0 +1,58 @@
+[data-sonner-toast].chandani-toast {
+  background: #faf7f2;
+  color: #302b25;
+  border: 1px solid #dfd6ca;
+  border-radius: 16px;
+  padding: 16px 20px;
+  font-family: inherit;
+  box-shadow: 0 14px 40px rgba(45, 35, 25, 0.14);
+  letter-spacing: -0.01em;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+[data-sonner-toast].chandani-toast [data-title] {
+  font-weight: 600;
+  color: #26221c;
+  font-size: 14px;
+}
+
+[data-sonner-toast].chandani-toast [data-description] {
+  color: #6e6358;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+[data-sonner-toast].chandani-toast [data-button] {
+  background: #473a2e;
+  color: #fffaf3;
+  border: none;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+[data-sonner-toast].chandani-toast [data-button]:hover {
+  background: #2e251d;
+  transform: translateY(-1px);
+}
+
+[data-sonner-toast].chandani-toast [data-button]:active {
+  transform: translateY(0);
+}
+
+[data-sonner-toast].chandani-toast [data-close-button] {
+  background: #f4ede3;
+  color: #473a2e;
+  border: 1px solid #dfd6ca;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+[data-sonner-toast].chandani-toast [data-close-button]:hover {
+  background: #e8ded2;
+}

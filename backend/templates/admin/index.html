@@ -1,0 +1,100 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+<div class="atelier-dashboard-hero">
+  <span class="hero-tagline-eyebrow">चाँदनी · LIVE ATELIER OPERATIONS</span>
+  <h2 class="atelier-hero-title">Kathmandu Valley Atelier &amp; Editorial CMS</h2>
+  <p class="atelier-hero-desc">
+    Complete real-time control of the Chandani online presence. Manage bespoke furniture dimensions, high-altitude Tibetan wool carpet variants, interactive 3D room hotspots, verified trade designer inquiries, and physical swatch deliveries across Nepal and worldwide.
+  </p>
+
+  <div class="executive-metrics-bar">
+    <div class="metric-pill">
+      <span class="metric-label">National Currency</span>
+      <span class="metric-value">NPR (रू)</span>
+      <span class="metric-sub">Nepali Rupee active across all suites</span>
+    </div>
+    <div class="metric-pill">
+      <span class="metric-label">B2B Trade Program</span>
+      <span class="metric-value">20% Tiered Discount</span>
+      <span class="metric-sub">Architects, Interior Designers &amp; Contractors</span>
+    </div>
+    <div class="metric-pill">
+      <span class="metric-label">Flagship Showroom</span>
+      <span class="metric-value">Baber Mahal Revisited</span>
+      <span class="metric-sub">Courtyard II, Kathmandu Valley</span>
+    </div>
+    <div class="metric-pill">
+      <span class="metric-label">Lead Time Standard</span>
+      <span class="metric-value">4–8 Weeks</span>
+      <span class="metric-sub">Patan solid wood &amp; Bhaktapur hand-tufting</span>
+    </div>
+  </div>
+
+  <div class="atelier-quick-launchers">
+    <a href="{% url 'admin:atelier_product_changelist' %}" class="quick-launch-link">
+      🛋️ Manage Furniture ({{ product_count|default:"12" }})
+    </a>
+    <a href="{% url 'admin:atelier_enquiry_changelist' %}" class="quick-launch-link">
+      📋 Client Enquiries &amp; Swatches
+    </a>
+    <a href="{% url 'admin:atelier_room_changelist' %}" class="quick-launch-link">
+      🏛️ Interactive Rooms &amp; 3D Hotspots
+    </a>
+    <a href="{% url 'admin:atelier_carpetvariant_changelist' %}" class="quick-launch-link">
+      🧵 Wool Swatches &amp; Palettes
+    </a>
+    <a href="{% url 'admin:atelier_sitesetting_changelist' %}" class="quick-launch-link">
+      ⚙️ Atelier Settings &amp; WhatsApp
+    </a>
+  </div>
+</div>
+
+<div id="content-main">
+  {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2>{% translate 'Recent actions' %}</h2>
+        <h3>{% translate 'My actions' %}</h3>
+            {% load log %}
+            {% get_admin_log 10 as admin_log for_user user %}
+            {% if not admin_log %}
+            <p>{% translate 'None available' %}</p>
+            {% else %}
+            <ul class="actionlist">
+            {% for entry in admin_log %}
+            <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                <span class="visually-hidden">{% if entry.is_addition %}{% translate 'Added:' %}{% elif entry.is_change %}{% translate 'Changed:' %}{% elif entry.is_deletion %}{% translate 'Deleted:' %}{% endif %}</span>
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                    {{ entry.object_repr }}
+                {% else %}
+                    <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                {% endif %}
+                <br>
+                {% if entry.content_type %}
+                    <span class="mini quiet">{% filter capfirst %}{{ entry.content_type.name }}{% endfilter %}</span>
+                {% else %}
+                    <span class="mini quiet">{% translate 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+    </div>
+</div>
+{% endblock %}
