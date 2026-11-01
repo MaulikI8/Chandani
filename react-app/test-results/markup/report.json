@@ -1,0 +1,16 @@
+{
+  "checks": [
+    "home: header static composition matches",
+    "home: main static composition matches",
+    "home: footer static composition matches",
+    "studio: header static composition matches",
+    "studio: main static composition matches",
+    "studio: footer static composition matches",
+    "try-sofa: named dialog, descriptive slider, non-drag controls, named groups and local feedback",
+    "try-kitchen: named dialog, descriptive slider, non-drag controls, named groups and local feedback",
+    "try-carpet: named dialog, descriptive slider, non-drag controls, named groups and local feedback",
+    "Desktop navigation has a direct Try the room entry",
+    "Motion starts with visible page content; glass is limited to one room toolbar with labelled working controls"
+  ],
+  "scope": "Static composition and accessibility semantics. Comparison excludes dynamic product grids, counts, hidden hotspot/detail children and explicit new accessibility controls (nav-try-room/comparison-adjust). Does not validate browser layout, focus or assistive technology behavior."
+}

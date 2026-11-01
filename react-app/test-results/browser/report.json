@@ -1,0 +1,943 @@
+{
+  "mode": "production",
+  "checks": [
+    "One warm room toolbar, working light controls, crossfades and live reduced-motion preference",
+    "Direct navigation entry, non-drag comparison controls and contextual screen-reader labels",
+    "Hero, all four room scenes and numbered hotspots",
+    "Category filtering, search and empty search results",
+    "All ten product detail entries, comparison images, keyboard and focus restoration",
+    "Pointer comparison, lighting, reset, expanded Escape and focus containment",
+    "Kitchen before/after and kitchen enquiry details",
+    "Shortlist persists between routes and reload; product and shortlist drafts retain details",
+    "Carpet studio colours, keyboard, day/evening, expand/reset and legacy routes",
+    "Configuration colours and bare floor preserve other slots; save and restore survives reload"
+  ],
+  "responsive": [
+    {
+      "page": "home",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "try-room",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "expanded-try-room",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "width": 320,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "try-room",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "expanded-try-room",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "try-room",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "expanded-try-room",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "width": 768,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "try-room",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "expanded-try-room",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "page": "carpet-studio",
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "visual": [
+    {
+      "page": "home",
+      "width": 320,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        320,
+        4602
+      ],
+      "after": [
+        320,
+        1000
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        320,
+        1845
+      ],
+      "after": [
+        320,
+        1000
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        390,
+        4693
+      ],
+      "after": [
+        390,
+        1000
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        390,
+        1946
+      ],
+      "after": [
+        390,
+        1000
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        768,
+        3668
+      ],
+      "after": [
+        768,
+        1000
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        768,
+        1900
+      ],
+      "after": [
+        768,
+        1000
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        1440,
+        3829
+      ],
+      "after": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "review": "Review the new navigation entry, larger launcher and comparison controls; these intentionally differ from the prototype.",
+      "ratio": 1,
+      "dimensionsMatch": false,
+      "before": [
+        1440,
+        1968
+      ],
+      "after": [
+        1440,
+        1000
+      ]
+    }
+  ],
+  "preservedRegions": [
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".scene-photo",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        221
+      ],
+      "after": [
+        320,
+        221
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".hero-copy",
+      "ratio": 0.00014775413711583924,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        423
+      ],
+      "after": [
+        320,
+        423
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".categories",
+      "ratio": 0.006928320734341253,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        926
+      ],
+      "after": [
+        320,
+        926
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".collection",
+      "ratio": 0.09909344490934449,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        717
+      ],
+      "after": [
+        320,
+        718
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".kitchen-section",
+      "ratio": 0.05437326629680998,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        721
+      ],
+      "after": [
+        320,
+        721
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".planning",
+      "ratio": 0.0010129310344827586,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        580
+      ],
+      "after": [
+        320,
+        580
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".contact",
+      "ratio": 0.013772455089820359,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        334
+      ],
+      "after": [
+        320,
+        334
+      ]
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "selector": ".footer",
+      "ratio": 0.010227864583333333,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        480
+      ],
+      "after": [
+        320,
+        480
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "selector": ".studio-heading",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        280,
+        205
+      ],
+      "after": [
+        280,
+        205
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "selector": ".comparison-image",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        280,
+        187
+      ],
+      "after": [
+        280,
+        187
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "selector": ".studio-collection",
+      "ratio": 0.006629247572815534,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        618
+      ],
+      "after": [
+        320,
+        618
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "selector": ".footer",
+      "ratio": 0.010227864583333333,
+      "dimensionsMatch": true,
+      "before": [
+        320,
+        480
+      ],
+      "after": [
+        320,
+        480
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".scene-photo",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        270
+      ],
+      "after": [
+        390,
+        270
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".hero-copy",
+      "ratio": 0.00013048868010700072,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        393
+      ],
+      "after": [
+        390,
+        393
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".categories",
+      "ratio": 0.005341004623791509,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        976
+      ],
+      "after": [
+        390,
+        976
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".collection",
+      "ratio": 0.11990340043437389,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        791
+      ],
+      "after": [
+        390,
+        791
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".kitchen-section",
+      "ratio": 0.1252585352032866,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        724
+      ],
+      "after": [
+        390,
+        725
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".planning",
+      "ratio": 0.0008877555838881806,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        543
+      ],
+      "after": [
+        390,
+        543
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".contact",
+      "ratio": 0.011300475971134654,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        334
+      ],
+      "after": [
+        390,
+        334
+      ]
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "selector": ".footer",
+      "ratio": 0.008719058719058719,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        462
+      ],
+      "after": [
+        390,
+        462
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "selector": ".studio-heading",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        350,
+        205
+      ],
+      "after": [
+        350,
+        205
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "selector": ".comparison-image",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        350,
+        234
+      ],
+      "after": [
+        350,
+        234
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "selector": ".studio-collection",
+      "ratio": 0.011950947603121516,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        690
+      ],
+      "after": [
+        390,
+        690
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "selector": ".footer",
+      "ratio": 0.008672536966273467,
+      "dimensionsMatch": true,
+      "before": [
+        390,
+        463
+      ],
+      "after": [
+        390,
+        463
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".scene-photo",
+      "ratio": 0.000935570987654321,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        540
+      ],
+      "after": [
+        768,
+        540
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".hero-copy",
+      "ratio": 0.0036656337389464138,
+      "dimensionsMatch": true,
+      "before": [
+        262,
+        404
+      ],
+      "after": [
+        262,
+        404
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".categories",
+      "ratio": 0.05148412619426752,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        628
+      ],
+      "after": [
+        768,
+        628
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".collection",
+      "ratio": 0.04644146712276701,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        878
+      ],
+      "after": [
+        768,
+        877
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".kitchen-section",
+      "ratio": 0.10321284514304724,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        501
+      ],
+      "after": [
+        768,
+        502
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".planning",
+      "ratio": 0.007208076131687243,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        405
+      ],
+      "after": [
+        768,
+        405
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".contact",
+      "ratio": 0.010872395833333333,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        220
+      ],
+      "after": [
+        768,
+        220
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "selector": ".footer",
+      "ratio": 0.0073558272946859906,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        345
+      ],
+      "after": [
+        768,
+        345
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "selector": ".studio-heading",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        704,
+        162
+      ],
+      "after": [
+        704,
+        162
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "selector": ".comparison-image",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        704,
+        470
+      ],
+      "after": [
+        704,
+        470
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "selector": ".studio-collection",
+      "ratio": 0.00376129150390625,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        512
+      ],
+      "after": [
+        768,
+        512
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "selector": ".footer",
+      "ratio": 0.006019776570048309,
+      "dimensionsMatch": true,
+      "before": [
+        768,
+        345
+      ],
+      "after": [
+        768,
+        345
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".scene-photo",
+      "ratio": 0.00042100694444444444,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        640
+      ],
+      "after": [
+        1440,
+        640
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".hero-copy",
+      "ratio": 0.001746158900459942,
+      "dimensionsMatch": true,
+      "before": [
+        461,
+        482
+      ],
+      "after": [
+        461,
+        482
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".categories",
+      "ratio": 0.05181484630889393,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        882
+      ],
+      "after": [
+        1440,
+        882
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".collection",
+      "ratio": 0.1939952761627907,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        688
+      ],
+      "after": [
+        1440,
+        688
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".kitchen-section",
+      "ratio": 0.05750728520398571,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        591
+      ],
+      "after": [
+        1440,
+        592
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".planning",
+      "ratio": 0.017181826434277413,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        306
+      ],
+      "after": [
+        1440,
+        306
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".contact",
+      "ratio": 0.027927994483845548,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        282
+      ],
+      "after": [
+        1440,
+        282
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "selector": ".footer",
+      "ratio": 0.010352412020561487,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        281
+      ],
+      "after": [
+        1440,
+        281
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "selector": ".studio-heading",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        864,
+        176
+      ],
+      "after": [
+        864,
+        176
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "selector": ".comparison-image",
+      "ratio": 0,
+      "dimensionsMatch": true,
+      "before": [
+        864,
+        576
+      ],
+      "after": [
+        864,
+        576
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "selector": ".studio-collection",
+      "ratio": 0.001147823779193206,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        628
+      ],
+      "after": [
+        1440,
+        628
+      ]
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "selector": ".footer",
+      "ratio": 0.0038539204097714735,
+      "dimensionsMatch": true,
+      "before": [
+        1440,
+        282
+      ],
+      "after": [
+        1440,
+        282
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "status": "passed"
+}

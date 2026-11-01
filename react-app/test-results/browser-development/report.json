@@ -1,0 +1,10 @@
+{
+  "mode": "development",
+  "checks": [],
+  "responsive": [],
+  "visual": [],
+  "preservedRegions": [],
+  "consoleErrors": [],
+  "status": "failed-or-environment-blocked",
+  "error": "Error: listen EPERM: operation not permitted 127.0.0.1"
+}

@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Pass through backend requests
+  RewriteRule ^api/ - [L]
+  RewriteRule ^admin/ - [L]
+
+  # Existing files and directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Single Page Application fallback
+  RewriteRule ^ index.html [L]
+</IfModule>
