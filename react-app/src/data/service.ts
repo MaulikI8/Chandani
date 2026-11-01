@@ -5,12 +5,19 @@ import type { CatalogueContent, Product } from './types';
 export interface CatalogueService {
   loadContent(signal?: AbortSignal): Promise<CatalogueContent>;
 }
+const API_URL = (endpoint: string) => {
+  if (typeof window !== 'undefined' && window.location.port === '5173') {
+    return `http://127.0.0.1:8000${endpoint}`;
+  }
+  return endpoint;
+};
+
 export const localCatalogueService: CatalogueService = {
   async loadContent(signal) {
     signal?.throwIfAborted();
     if (typeof window !== 'undefined' && typeof fetch === 'function') {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/catalogue/', { signal });
+        const res = await fetch(API_URL('/api/catalogue/'), { signal });
         if (res.ok) {
           const remote = await res.json();
           if (remote?.products?.length && remote?.rooms && remote?.comparisons) {
@@ -39,7 +46,7 @@ export const formatNPR = formatNpr;
 export async function submitEnquiryToDjango(payload: Record<string, unknown>): Promise<boolean> {
   if (typeof fetch !== 'function') return false;
   try {
-    const res = await fetch('http://127.0.0.1:8000/api/enquiries/', {
+    const res = await fetch(API_URL('/api/enquiries/'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
