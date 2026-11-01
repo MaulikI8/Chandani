@@ -7,12 +7,16 @@ cd ~/Chandani_live
 git fetch origin main
 git reset --hard origin/main
 
-# 2. Build & Deploy React Frontend with Admin Suite
-echo "Building and deploying React frontend..."
+# 2. Deploy React Frontend with Admin Suite (using prebuilt dist)
+echo "Deploying React frontend..."
 cd ~/Chandani_live/react-app
-export PATH="/opt/alt/alt-nodejs20/root/usr/bin:$PATH"
-npm run build || npx vite build || true
 if [ -d "dist" ]; then
+  echo "Copying prebuilt dist to docroot..."
+  cp -rf dist/* /home8/aashutos/basnetaashutosh.com.np/
+else
+  echo "dist not found, attempting build..."
+  export PATH="/opt/alt/alt-nodejs20/root/usr/bin:$PATH"
+  npm run build || npx vite build || true
   cp -rf dist/* /home8/aashutos/basnetaashutosh.com.np/
 fi
 
