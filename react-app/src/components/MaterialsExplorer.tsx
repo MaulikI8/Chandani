@@ -218,7 +218,7 @@ export function MaterialsExplorer() {
             aria-pressed={lighting === 'day'}
             onClick={() => setLighting('day')}
           >
-            ☀️ Daylight (5500K)
+            Daylight (5500K)
           </button>
           <button
             type="button"
@@ -226,7 +226,7 @@ export function MaterialsExplorer() {
             aria-pressed={lighting === 'evening'}
             onClick={() => setLighting('evening')}
           >
-            🌙 Evening (2700K)
+            Evening (2700K)
           </button>
         </div>
       </div>
@@ -340,7 +340,7 @@ export function MaterialsExplorer() {
           <div className="tray-topline">
             <span className="eyebrow">PALETTE COMBINATION</span>
             <span className="tray-lighting-tag">
-              {lighting === 'day' ? '☀️ Natural Morning Sun' : '🌙 Warm Evening Lamp'}
+              {lighting === 'day' ? 'Natural Morning Sun' : 'Warm Evening Lamp'}
             </span>
           </div>
 

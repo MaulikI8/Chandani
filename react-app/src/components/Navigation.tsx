@@ -52,10 +52,10 @@ export function MobileNavigation() {
     <p className="concierge-phone">+977 1 552 4890 · atelier@chandani.com.np</p>
     <div className="drawer-concierge-actions">
       <button type="button" className="quick-perk-chip" onClick={() => openEnquiry('Trade Partnership', 'trade')}>
-        📐 Trade &amp; Designers
+        Trade &amp; Designers
       </button>
       <button type="button" className="quick-perk-chip" onClick={() => openEnquiry('Material Swatches', 'swatch')}>
-        🪵 Material Swatches
+        Material Swatches
       </button>
     </div>
   </div>

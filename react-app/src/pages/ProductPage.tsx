@@ -482,10 +482,10 @@ export function ProductPage() {
 
           <div className="product-quick-perks" role="group" aria-label="Bespoke atelier services">
             <button type="button" className="quick-perk-btn" onClick={() => openEnquiry(p.name, 'swatch')}>
-              🪵 Material &amp; Finish Samples
+              Material &amp; Finish Samples
             </button>
             <button type="button" className="quick-perk-btn" onClick={() => openEnquiry(p.name, 'trade')}>
-              📐 Architecture &amp; Designer Collaboration
+              Architecture &amp; Designer Collaboration
             </button>
           </div>
 

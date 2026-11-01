@@ -158,14 +158,14 @@ export function ProductDetails({ id }: { id: string }) {
         className="quick-perk-chip"
         onClick={() => openEnquiry(p.name, 'swatch', `Requesting physical material and finish samples for ${p.name}.`)}
       >
-        <span>🪵 Material &amp; Finish Samples</span>
+        <span>Material &amp; Finish Samples</span>
       </button>
       <button
         type="button"
         className="quick-perk-chip"
         onClick={() => openEnquiry(p.name, 'trade', `Trade & designer enquiry for ${p.name}: requesting technical dimensions, finish options, and collaboration terms.`)}
       >
-        <span>📐 Architecture &amp; Interior Collaboration</span>
+        <span>Architecture &amp; Interior Collaboration</span>
       </button>
     </div>
 

@@ -166,7 +166,6 @@ export function EnquiryForm() {
           </div>
           {areaEst && (
             <div className="enquiry-area-helper" aria-live="polite">
-              <span className="area-symbol">📐</span>
               <span>Estimated floor area: <strong>~{areaEst.areaM2} m²</strong> ({areaEst.areaSqFt} sq ft)</span>
             </div>
           )}
