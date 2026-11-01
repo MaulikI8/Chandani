@@ -5,7 +5,7 @@
 
 {% block extrastyle %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'admin/css/chandani_luxury_admin.css' %}">
+<link rel="stylesheet" href="{% static 'admin/css/chandani_luxury_admin.css' %}?v=2">
 {% endblock %}
 
 {% block branding %}
@@ -24,14 +24,14 @@
 
 {% block nav-global %}
 <div style="display:flex;align-items:center;gap:10px;margin-right:20px;">
-  <a href="http://127.0.0.1:5173/" target="_blank" rel="noopener noreferrer" class="storefront-pill-btn">
-    Storefront (5173) ↗
+  <a href="/" target="_blank" rel="noopener noreferrer" class="storefront-pill-btn">
+    Live Storefront
   </a>
-  <a href="http://127.0.0.1:5173/carpet-studio" target="_blank" rel="noopener noreferrer" class="quick-launch-link" style="background:rgba(255,255,255,0.08);border-radius:999px;padding:6px 14px;">
-    Carpet Studio ↗
+  <a href="/carpet-studio" target="_blank" rel="noopener noreferrer" class="quick-launch-link" style="background:rgba(255,255,255,0.08);border-radius:999px;padding:6px 14px;">
+    Carpet Studio
   </a>
-  <a href="http://127.0.0.1:5173/atelier" target="_blank" rel="noopener noreferrer" class="quick-launch-link" style="background:rgba(255,255,255,0.08);border-radius:999px;padding:6px 14px;">
-    Atelier Story ↗
+  <a href="/atelier" target="_blank" rel="noopener noreferrer" class="quick-launch-link" style="background:rgba(255,255,255,0.08);border-radius:999px;padding:6px 14px;">
+    Atelier Story
   </a>
 </div>
 {% endblock %}
