@@ -74,7 +74,7 @@ export function PlanningAssistant() {
           <span className="eyebrow">ARCHITECTURAL PROPORTIONS &amp; SCALE</span>
           <h3>The Interior Planning Assistant</h3>
           <p>
-            Avoid costly sizing mistakes before you purchase. Test your exact room dimensions to calculate recommended carpet sizes, sofa lengths, dining clearances, and circulation walkways.
+            Enter approximate room dimensions to explore general ideas for furniture scale and circulation.
           </p>
         </div>
         <div className="room-type-tabs" role="tablist" aria-label="Select room type for planning advice">
@@ -107,7 +107,7 @@ export function PlanningAssistant() {
               type="range"
               min="3.0"
               max="9.0"
-              step="0.2"
+              step="0.1"
               value={length}
               onChange={(e) => setLength(parseFloat(e.target.value))}
               aria-label="Room length in meters"
@@ -124,7 +124,7 @@ export function PlanningAssistant() {
               type="range"
               min="2.5"
               max="7.0"
-              step="0.2"
+              step="0.1"
               value={width}
               onChange={(e) => setWidth(parseFloat(e.target.value))}
               aria-label="Room width in meters"
@@ -230,7 +230,7 @@ export function PlanningAssistant() {
               Apply dimensions to consultation enquiry <Icon />
             </button>
             <p className="fineprint">
-              Dimensions will pre-populate your consultation draft. Our design team will verify structural tolerances and site constraints.
+              Dimensions will pre-populate your consultation draft. Use these suggestions as a starting point and check your measurements before deciding.
             </p>
           </div>
         </div>

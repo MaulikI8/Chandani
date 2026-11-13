@@ -33,7 +33,7 @@ export function buildDraft({ fields, selected }: EnquiryState): string {
   }
   if (selected.length) lines.push('My selection: ' + selected.map(p => `${p.name} (${p.palette})`).join(', ') + '.');
   if (fields.interest.startsWith('Kitchen')) lines.push(`Preferred layout: ${fields.layout}.`);
-  if (fields.dimensions.trim()) lines.push('Room dimensions: ' + fields.dimensions.trim());
+  if (fields.dimensions.trim()) lines.push('Dimensions or quantity: ' + fields.dimensions.trim());
   if (fields.notes.trim()) lines.push('', fields.notes.trim());
   if (fields.name.trim()) lines.push('', 'Name: ' + fields.name.trim());
   if (fields.contact.trim()) lines.push('Contact: ' + fields.contact.trim());

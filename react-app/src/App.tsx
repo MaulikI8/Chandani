@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { CarpetStudio } from './pages/CarpetStudio';
 import { ProductPage } from './pages/ProductPage';
 import { AtelierPage } from './pages/AtelierPage';
+import { CfiProductPage } from './components/CfiCatalogue';
 import { Drawer } from './components/Drawer';
 import { TryRoomDialog } from './components/TryRoomDialog';
 import { useApp } from './state/AppContext';
@@ -99,11 +100,13 @@ export function App() {
       document.title = 'Chandani · The carpet studio';
     } else if (location.pathname === '/atelier') {
       document.title = 'Chandani · The Atelier Story';
+    } else if (location.pathname.startsWith('/catalogue/')) {
+      document.title = 'Chandani · Mattresses & foam';
     } else if (location.pathname.startsWith('/product/')) {
       const prodId = location.pathname.split('/')[2];
       document.title = prodId ? `Chandani · ${prodId.charAt(0).toUpperCase() + prodId.slice(1)}` : 'Chandani · Collection';
     } else {
-      document.title = 'Chandani · Furniture, carpets & interiors';
+      document.title = 'Chandani · Mattresses, foam & interiors';
     }
   }, [location.pathname, isAdminRoute]);
 
@@ -157,6 +160,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/carpet-studio" element={<CarpetStudio />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/catalogue/:id" element={<CfiProductPage />} />
           <Route path="/atelier" element={<AtelierPage />} />
           <Route path="/index.html" element={<LegacyRedirect path="/" />} />
           <Route path="/atelier.html" element={<LegacyRedirect path="/carpet-studio" />} />
