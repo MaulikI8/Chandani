@@ -35,50 +35,5 @@ export function Drawer() {
 
 export function AtelierDrawerStory() {
   const { openEnquiry } = useApp();
-  return (
-    <div className="drawer-atelier-story" style={{ padding: '4px 0 24px' }}>
-      <h2 id="drawerTitle" style={{ fontSize: '28px', lineHeight: 1.15, marginBottom: '16px' }}>
-        Crafted in silence.<br />Built for generations.
-      </h2>
-      <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.7, marginBottom: '24px' }}>
-        In the ancient craft quarters of the Kathmandu Valley, Chandani brings together centuries of Newar woodworking tradition, Tibetan hand-knotted highland wool, and clean architectural lines.
-      </p>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
-        <div style={{ background: 'var(--white)', border: '1px solid var(--line)', padding: '16px', borderRadius: '6px' }}>
-          <span style={{ color: 'var(--rust)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>01 / Highland Tibetan Wool</span>
-          <h4 style={{ margin: '4px 0 6px', fontSize: '15px' }}>Lanolin-Rich Mountain Fibers</h4>
-          <p style={{ margin: 0, fontSize: '12px', color: 'var(--muted)', lineHeight: 1.5 }}>
-            Sheared above 3,500m and hand-spun on drop spindles. Naturally flame-retardant and soil-resistant with 100 knots per square inch.
-          </p>
-        </div>
-
-        <div style={{ background: 'var(--white)', border: '1px solid var(--line)', padding: '16px', borderRadius: '6px' }}>
-          <span style={{ color: 'var(--rust)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>02 / Patan Joinery</span>
-          <h4 style={{ margin: '4px 0 6px', fontSize: '15px' }}>Mortise-and-Tenon Architecture</h4>
-          <p style={{ margin: 0, fontSize: '12px', color: 'var(--muted)', lineHeight: 1.5 }}>
-            Bench-made solid walnut, oak, and sal wood frames crafted without synthetic screws, allowing the wood to breathe across seasons.
-          </p>
-        </div>
-
-        <div style={{ background: 'var(--white)', border: '1px solid var(--line)', padding: '16px', borderRadius: '6px' }}>
-          <span style={{ color: 'var(--rust)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>03 / Flagship Viewing Gallery</span>
-          <h4 style={{ margin: '4px 0 6px', fontSize: '15px' }}>Baber Mahal Revisited · Courtyard II</h4>
-          <p style={{ margin: 0, fontSize: '12px', color: 'var(--muted)', lineHeight: 1.5 }}>
-            Private viewing sessions by appointment. Touch raw wool skeins, timber finishes, and experience room scales in person.
-          </p>
-        </div>
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <button type="button" className="button" onClick={() => openEnquiry('Whole home')}>
-          Book an Atelier Consultation →
-        </button>
-        <button type="button" className="button outline" onClick={() => openEnquiry('Material Swatches', 'swatch')}>
-          Request Material &amp; Finish Samples
-        </button>
-      </div>
-    </div>
-  );
+  return <div className="drawer-atelier-story"><h2 id="drawerTitle">Comfort and protection, made in Nepal.</h2><p>Chadhani Foam Industries manufactures mattresses, PU foam and EPE foam products in eastern Nepal.</p><p>Titriban, Ramdhuni Municipality, Sunsari</p><p><a href="tel:+9779852048761">+977 9852048761</a><br /><a href="mailto:info@cfi.com.np">info@cfi.com.np</a></p><button type="button" className="button" onClick={() => openEnquiry('Product enquiry')}>Start an enquiry <Icon /></button></div>;
 }
-

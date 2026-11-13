@@ -1,0 +1,24 @@
+.cfi-catalogue { scroll-margin-top: 90px; }
+.cfi-catalogue .section-heading p { max-width: 350px; }
+.cfi-search { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; margin: 0 0 22px; }
+.cfi-search label { font-size: 12px; font-weight: 600; }
+.cfi-search input { width: min(100%, 320px); min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 4px; background: var(--white); color: var(--ink); font: inherit; }
+.cfi-collection-bar { align-items: flex-start; gap: 18px; }
+.cfi-collection-bar .filters { flex-wrap: wrap; }
+.cfi-product-image { display: block; overflow: hidden; width: 100%; aspect-ratio: 3 / 2; background: #e9e4dc; }
+.cfi-product-image img, .cfi-detail-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.cfi-product-card h3 a { color: inherit; text-decoration: none; }
+.cfi-product-card .product-info p { line-height: 1.45; }
+.cfi-image-placeholder { display: flex; width: 100%; height: 100%; min-height: 180px; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; box-sizing: border-box; background: #e9e4dc; color: #615b52; text-align: center; }
+.cfi-image-placeholder span { font-size: 13px; letter-spacing: .16em; }
+.cfi-image-placeholder small { font-size: 12px; }
+.cfi-empty { padding: 38px 0; }
+.cfi-detail-image { aspect-ratio: 3 / 2; background: #e9e4dc; }
+.cfi-detail-image .cfi-image-placeholder { min-height: 100%; }
+.cfi-detail .product-related-full { padding-left: 0; padding-right: 0; }
+@media (hover: hover) { .cfi-product-image:hover img { transform: scale(1.025); } }
+@media (prefers-reduced-motion: reduce) { .cfi-product-image img { transition: none; } }
+.cfi-material-preview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 24px; align-items: center; }
+.cfi-material-preview img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.cfi-material-preview p { line-height: 1.6; }
+@media (max-width: 560px) { .cfi-material-preview { grid-template-columns: 1fr; } }

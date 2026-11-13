@@ -15,6 +15,7 @@ import { RoomStudio } from '../components/RoomStudio';
 import { DesignJournal } from '../components/DesignJournal';
 import { AtelierCraftStory } from '../components/AtelierCraftStory';
 import { ShowroomFaq } from '../components/ShowroomFaq';
+import { CfiCatalogue } from '../components/CfiCatalogue';
 
 /* ==========================================================================
    HOMEPAGE IN A SINGLE FILE
@@ -209,9 +210,9 @@ export function RoomExplorer() {
           </div>
         </div>
         <div className="hero-copy" id="heroCopy" hidden={exploring}>
-          <span className="eyebrow">FURNITURE, CARPETS &amp; INTERIORS</span>
+          <span className="eyebrow">MATTRESSES, FOAM &amp; INTERIORS</span>
           <h1>A home,<br />in your<br /><em>own way.</em></h1>
-          <p>From the sofa you sink into to the kitchen you gather in. Find what makes a space yours.</p>
+          <p>Discover mattresses and foam made in Nepal, alongside ideas for the spaces you call home.</p>
           <MotionButton
             className="button"
             ref={exploreButton}
@@ -222,7 +223,7 @@ export function RoomExplorer() {
           >
             Explore this room <Icon />
           </MotionButton>
-          <a className="text-link" href="#categories">
+          <a className="text-link" href="#catalogue">
             Discover the collection <span>↓</span>
           </a>
         </div>
@@ -302,10 +303,10 @@ export function CategoryDirectory() {
     <RevealSection className="categories section" id="categories">
       <div className="section-heading">
         <div>
-          <span className="eyebrow">THE CHANDANI HOME</span>
+          <span className="eyebrow">ROOM INSPIRATION</span>
           <h2>One piece.<br />Or a whole new perspective.</h2>
         </div>
-        <p>Some things bring a room together.<br />Others become the reason for the room.<br />Find your starting point.</p>
+        <p>Explore illustrative furniture and interior ideas. Contact us to discuss what is available for your space.</p>
       </div>
       <div className="category-grid">
         {categories.map(c => (
@@ -344,8 +345,8 @@ export function ProductCollection() {
     <RevealSection className="collection section" id="collection">
       <div className="section-heading">
         <div>
-          <span className="eyebrow">AN ILLUSTRATIVE COLLECTION</span>
-          <h2>Pieces to make it yours.</h2>
+          <span className="eyebrow">ILLUSTRATIVE ROOM CONCEPTS</span>
+          <h2>Ideas to make it yours.</h2>
         </div>
         <button className="text-link" onClick={() => query({ category: 'all' })}>
           Explore all pieces <Icon name="right" />
@@ -410,6 +411,9 @@ export function Home() {
       {/* 01. The Interactive Residence */}
       <RoomExplorer />
 
+      {/* The existing manufacturer's actual product categories. */}
+      <CfiCatalogue />
+
       {/* 02. Explore Chandani Category Directory */}
       <CategoryDirectory />
 
@@ -471,13 +475,13 @@ export function Home() {
       </RevealSection>
 
       {/* 13. Whole-Home Consultation Contact */}
-      <RevealSection className="contact section">
+      <RevealSection className="contact section" id="contact">
         <div>
           <span className="eyebrow">LET’S BEGIN</span>
-          <h2>Your next chapter<br />starts at home.</h2>
+          <h2>Let’s talk about<br />what you need.</h2>
         </div>
         <div>
-          <p>One room or the whole home.<br />Tell us what you have in mind.</p>
+          <p>Mattresses, foam or a space of your own.<br />Tell us what you have in mind.</p>
           <MotionButton className="button" onClick={() => openEnquiry('Whole home')}>
             Start a conversation <Icon />
           </MotionButton>
